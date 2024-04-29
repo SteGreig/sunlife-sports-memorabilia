@@ -1,0 +1,64 @@
+.header {
+    background: #fff;
+    //height: 65px;
+    position: relative;
+    z-index: 3;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+
+    .logo {
+        padding:15px 20px;
+
+        a {
+            text-indent: -9999em;
+            width: 87px;
+            height: 40px;
+            display: block;
+            margin: 0 auto;
+            .retina-image("/source/images/sld-logo", "png");
+        }
+    }
+}
+
+.help-component-link {
+    display: none;
+}
+
+
+.screen-0-890() {
+    .help-component-link {
+        display: block;
+        background: @color-midnight;
+        text-align: center;
+    }
+    .help-component-link a {
+        color: #fff;
+        padding: 8px 4px;
+        .inline-block();
+        .font-size(14);
+        .line-height(16);
+    }
+}
+
+.screen-690-up() {
+    .header {
+        height: auto;
+        padding: 0;
+    }
+}
+
+.screen-890-up() {
+    .header {
+        .logo {
+            max-width: 1170px;
+            margin: 0 auto;
+            //padding: 0 1.87em;
+            position: relative;
+	        z-index: 1;
+            a {
+                width: 144px;
+                height: 66px;
+                margin: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,96 @@
+﻿.product-summary {
+
+    padding: 20px 50px 0;
+    .component-border();
+    .component-header
+    {
+        position: relative;
+        .clearfix();
+
+        .image
+        {
+            float:left;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            width: 60px;
+        }
+
+        .title
+        {
+            color: #555;
+            font-family: @font-vag-light;
+            overflow: hidden;
+            margin-top:10px;
+            margin-bottom: 20px;
+            .font-size(26);
+            .line-height(28);
+        }
+    }
+
+    .summary
+    {
+        border-top: 1px solid #dae0e3;
+        padding-top: 40px;
+        margin-left:-50px;
+        margin-right:-50px;
+        padding-left: 50px;
+        padding-right: 50px;
+	
+        p 
+        {
+            margin-bottom: 20px;
+            .font-size(15);
+            .line-height(18);
+        }
+
+    }
+
+    .feature-list
+    {
+        border-bottom: 1px solid #e7ebed;
+        margin-left: -50px;
+        margin-right: -50px;
+        text-align: left;
+        li
+        {
+            display: block;
+            padding: 30px 50px 30px 95px;
+            border-top: 1px solid #e7ebed;
+            list-style: none;
+            background: url(/source/images/feature-list-item.png) 50px 20px no-repeat;
+            .font-size(15);
+            .line-height(17);
+        }
+    }
+
+    .cta-panel
+    {
+        margin: 0 -50px;
+        padding: 10px 5px;
+        text-align: center;
+        background: #f2f2f2;
+
+        .btn
+        {
+            margin:5px 10px;
+        }
+    }
+}
+
+
+.screen-768-up()
+{
+    .product-summary
+    {
+        margin: 0 5px;
+        .component-header
+        {
+
+            .title
+            {
+                .font-size(30);
+                .line-height(32);
+            }
+        }
+    }
+} 

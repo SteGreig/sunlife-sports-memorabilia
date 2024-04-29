@@ -1,0 +1,77 @@
+﻿/* ================== [ SLD Brandsite Mixins ] ================== */
+
+.navPanel() {
+    background: #ffdd00;
+    border-top: 1px solid #ede398;
+    position: relative;
+    padding: 9px 20px;
+
+    &:before
+    {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: 0;
+        width: 100%;
+        border-top: 1px solid #eeedd9;
+    }
+}
+
+// hide content from screen but remain visible to screen readers
+.hide-element() {
+    position: absolute;
+    top:-999em;
+    left:-999em;
+}
+
+.component-border() {
+    background: #fff;
+    border: 1px solid #dae0e3;
+    border-radius: 4px;
+    box-shadow: 0 0 6px rgba(0,0,0,0.1);
+}
+
+
+/* Button styling */
+.button-style(@text-color,@text-color-hover, @color-shadow, @color-btn, @color-btn-hover,@color-btn-dark, @outline-color: orange)
+{
+    box-shadow: 0 2px 0 0 @color-shadow;
+    .gradient (top, @color-btn, @color-btn-dark);
+
+    a,
+    input
+    {
+        color: @text-color;
+        background-color: @color-btn;
+        .inline-block();
+
+        &:focus
+        {
+            outline-color: @outline-color;
+        }
+    }
+
+    [class^="icon-"]
+    {
+        color: @text-color;
+        background-color: @color-btn-dark;
+    }
+
+    .btn-inner:hover
+    {
+        [class^="icon-"]
+        {
+            color: @text-color-hover;
+            background-color: @color-btn;
+        }
+
+        a:hover,
+        a:active,
+        input:hover,
+        input:active
+        {
+            color: @text-color-hover;
+            background-color: @color-btn;
+        }
+    }
+}

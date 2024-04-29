@@ -1,0 +1,436 @@
+input[type="submit"]
+{
+    .inline-block();
+    cursor: pointer;
+    border: none;
+    background-color: @color-btn-default;
+    vertical-align: middle;
+    .font-size(16);
+    line-height: 1.3;
+    padding: 10px 28px;
+    overflow: visible;
+    text-decoration: none;
+    border-radius: 3px;
+    margin: 0;
+    color: #142745;
+    font-family: @font-vag-light;
+    font-weight: normal;
+    position: relative;
+
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    text-align: left;
+
+    &:hover,
+    &:active {
+        color: #fff;
+    }
+}
+
+.link {
+    position: relative;
+    font-weight: bold;
+    padding-right: 16px;
+	.font-size(12);
+    .line-height(14);
+    .inline-block();
+
+    &:after
+    {
+        content: "\e625";
+        font-family: 'icomoon';
+        .font-size(12);
+        position: absolute;
+        top: -1px;
+        right: 0;
+    }
+}
+
+.btn
+{
+    /*---[ Base styling for button style anchors & inputs ]---*/
+    padding: 3px;
+    border-radius: 4px;
+    margin: 5px 0;
+    box-shadow: 0 2px 0 0 @color-btn-default-shadow;
+    width: 100%;
+    .gradient (top, @color-btn-default, @color-btn-default-dark);
+    .inline-block();
+    .box-sizing(border-box);
+
+    .btn-inner
+    {
+        display: block;
+        position: relative;
+    }
+
+    a,
+    input
+    {
+        cursor: pointer;
+        border: none;
+        padding: 7px 17px;
+        overflow: visible;
+        text-decoration: none;
+        border-radius: 4px;
+        margin: 0;
+        color: @color-btn-default-textcolor;
+        font-family: @font-vag-light;
+        font-weight: normal;
+        background-color: @color-btn-default;
+        position: relative;
+        width: 100%;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        text-align: left;
+        line-height: 1.2;
+        .box-sizing(border-box);
+        .inline-block(middle);
+        .transition(color, 0s);
+        span
+        {
+            .inline-block();
+        }
+    }
+
+    [class^="icon-"]
+    {
+        width: 34px;
+        height: 100%;
+        background-color: @color-btn-default-dark;
+        position: absolute;
+        top: 0;
+        right: 0;
+        text-align: center;
+        color: @color-btn-default-textcolor;
+        z-index: 1;
+        pointer-events: none;
+        speak: none;
+    }
+
+    .btn-inner:hover
+    {
+        [class^="icon-"]
+        {
+            color: @color-btn-default-textcolor-hover;
+            background-color: @color-btn-default;
+        }
+        
+        a:hover,
+        a:active,
+        input:hover,
+        input:active
+        {
+            color: @color-btn-default-textcolor-hover;
+            background-color: @color-btn-default;
+        }
+    }
+
+    
+
+    &.btn-icon-left
+    {
+        [class^="icon-"] + a,
+        [class^="icon-"] + input
+        {
+            padding-left: 51px;
+        }
+
+        [class^="icon-"]
+        {
+            left: 0;
+            right: auto;
+        }
+    }
+
+    &.btn-icon,
+    &.btn-icon-right
+    {
+        [class^="icon-"] + a,
+        [class^="icon-"] + input
+        {
+            padding-right: 51px;
+        }
+
+        [class^="icon-"]
+        {
+            right: 0;
+            left: auto;
+        }
+    }
+    // icon size adjustments
+    [class^="icon-arrow"]
+    {
+        .font-size(14);
+        line-height: 2.5;
+    }
+    /*---[ Button sizes ]---*/
+    /*---[ Specific button styles ]---*/
+    &.btn-quote, &.btn-green, &.btn-primary
+    {
+        .button-style(@color-btn-primary-textcolor,@color-btn-primary-textcolor-hover, @color-btn-primary-shadow, @color-btn-primary,@color-btn-primary-hover,@color-btn-primary-dark);
+    }
+
+    &.btn-secondary
+    {
+        .button-style(@color-btn-default-textcolor,@color-btn-default-textcolor-hover, @color-btn-default-shadow, @color-btn-default,@color-btn-default-hover,@color-btn-default-dark);
+    }
+
+    &.btn-tertiary
+    {
+        .button-style(@color-btn-tertiary-textcolor,@color-btn-tertiary-textcolor-hover, @color-btn-tertiary-shadow, @color-btn-tertiary,@color-btn-tertiary-hover,@color-btn-tertiary-dark);
+    }
+
+
+    &.btn-facebook
+    {
+        .button-style(@color-btn-facebook-textcolor,@color-btn-facebook-textcolor-hover, @color-btn-facebook-shadow, @color-btn-facebook,@color-btn-facebook-hover,@color-btn-facebook-dark);
+    }
+
+    &.btn-twitter,
+    &.btn-back
+    {
+        .button-style(@color-btn-tertiary-textcolor,@color-btn-tertiary-textcolor-hover, @color-btn-tertiary-shadow, @color-btn-tertiary,@color-btn-tertiary-hover,@color-btn-tertiary-dark);
+    }
+
+    &.btn-google
+    {
+        .button-style(@color-btn-google-textcolor,@color-btn-google-textcolor-hover, @color-btn-google-shadow, @color-btn-google,@color-btn-google-hover,@color-btn-google-dark);
+
+    }
+
+    &.btn-rss
+    {
+        .button-style(@color-btn-rss-textcolor,@color-btn-rss-textcolor-hover, @color-btn-rss-shadow, @color-btn-rss,@color-btn-rss-hover,@color-btn-rss-dark);
+    }
+
+    &.btn-video
+    {
+        /*.button-style(@color-btn-default-textcolor,@color-btn-default-textcolor-hover, @color-btn-default-shadow, @color-btn-default,@color-btn-default-hover,@color-btn-default-dark);*/
+
+        .btn [class^="icon-"]
+        {
+            line-height: 1.9;
+        }
+    }
+
+    &.btn-newsletter
+    {
+        .button-style(@color-btn-newsletter-textcolor,@color-btn-newsletter-textcolor-hover, @color-btn-newsletter-shadow, @color-btn-newsletter,@color-btn-newsletter-hover,@color-btn-newsletter-dark);
+    }
+
+    &.btn-phone
+    {
+        .btn-inner span
+        {
+            margin: -10px -20px -10px 20px;
+            background: @color-btn-primary-dark;
+            padding: 10px;
+            border-radius: 0 3px 3px 0;
+        }
+    }
+
+    .paging-control &
+    {
+        .button-style(@color-btn-tertiary-textcolor,@color-btn-tertiary-textcolor-hover, @color-btn-tertiary-shadow, @color-btn-tertiary,@color-btn-tertiary-hover,@color-btn-tertiary-dark);
+        box-shadow: 0 0 0 rgba(0,0,0,0);    
+    }
+
+    .paging-control &.btn-disabled,
+    .btn-disabled
+    {
+        .button-style(@color-btn-disabled-textcolor,@color-btn-disabled-textcolor-hover, @color-btn-disabled-shadow, @color-btn-disabled,@color-btn-disabled-hover,@color-btn-disabled-dark);
+
+        a, input
+        {
+            text-shadow: none;
+
+            &:hover,
+            &:active
+            {
+                background-color: @color-btn-disabled;
+            }
+        }
+
+        box-shadow: 0 0 0 rgba(0,0,0,0);
+    }
+
+
+    .snippet-component.tweet-list &,
+    .snippet-component.customer-quote &,
+    .snippet-component.guide-snippet &,
+    .snippet-component.research-snippet &,
+    .snippet-component.meet-staff-snippet &,
+    .snippet-component.meet-staff-snippet &,
+    .snippet-component.video-snippet &,
+    .snippet-component.poll-snippet &
+    {
+        .button-style(@color-btn-tertiary-textcolor,@color-btn-tertiary-textcolor-hover, @color-btn-tertiary-shadow, @color-btn-tertiary,@color-btn-tertiary-hover,@color-btn-tertiary-dark);
+    }
+}
+
+.footer {
+    .btn {
+        box-shadow: 0 0 0 rgba(0,0,0,0);
+    }
+}
+
+.screen-0-480() {
+    .btn {
+        &.btn-phone {
+        .btn-inner span {
+            margin: 10px -20px -10px;
+			display: block;
+            background: @color-btn-primary-dark;
+            padding: 10px 20px;
+			text-align: center;
+            border-radius: 0 3px 3px 3px;
+        }    
+    }
+    }
+}
+
+.screen-0-690()
+{
+    .btn {
+        a,
+        input
+        {
+            .font-size(14);
+        }
+        [class^="icon-"]
+        {
+            line-height: 1.9;
+            .font-size(16);
+        }
+
+        &.btn-video
+        {
+            width: auto;
+            .btn-inner:hover {
+                a:hover,
+	            a:active {
+                    background-color: transparent;
+	            }
+            }
+        }
+    }
+}
+
+.screen-320-up() {
+    .btn {
+        width:auto;
+    }
+}
+
+.screen-690-up()
+{
+    .btn
+    {
+        a,
+        input
+        {
+            .font-size(17);
+        }
+        [class^="icon-"]
+        {
+            line-height: 2.3;
+            .font-size(14);
+        }
+        &.btn-small
+        {
+
+            a,
+            input
+            {
+                .font-size(14);
+            }
+
+            [class^="icon-"]
+            {
+                width: 30px;
+                line-height: 2;
+                .font-size(15);
+            }
+
+            &.btn-icon-left
+            {
+                [class^="icon-"] + a,
+                [class^="icon-"] + input
+                {
+                    padding-left: 43px;
+                }
+            }
+
+            &.btn-icon,
+            &.btn-icon-right
+            {
+                [class^="icon-"] + a,
+                [class^="icon-"] + input
+                {
+                    padding-right: 46px;
+                }
+            }
+            // icon size adjustments
+            [class^="icon-arrow"]
+            {
+                .font-size(14);
+                line-height: 2.2;
+            }
+        }
+
+        &.btn-large
+        {
+
+            a,
+            input
+            {
+                .font-size(21);
+                padding: 12px 28px;
+            }
+
+            [class^="icon-"]
+            {
+                width: 45px;
+                line-height: 2.1;
+                .font-size(21);
+            }
+
+            &.btn-icon-left
+            {
+                [class^="icon-"] + a,
+                [class^="icon-"] + input
+                {
+                    padding-left: 72px;
+                }
+            }
+
+            &.btn-icon,
+            &.btn-icon-right
+            {
+                [class^="icon-"] + a,
+                [class^="icon-"] + input
+                {
+                    padding-right: 72px;
+                }
+            }
+            // icon size adjustments
+            [class^="icon-arrow"]
+            {
+                .font-size(19);
+                line-height: 2.5;
+            }
+        }
+
+        &.btn-video
+        {
+            box-shadow: 0 0 0 rgba(0,0,0,0);
+            & [class^="icon-"]
+            {
+                line-height: 1.4;
+                .font-size(26);
+            }
+    
+        }
+    }
+}

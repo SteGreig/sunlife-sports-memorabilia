@@ -1,0 +1,54 @@
+﻿.share-panel
+{
+    border-top: 1px solid #e6e6e6;
+    padding: 20px 0;
+
+    p
+    {
+        color: #666;
+        font-weight: bold;
+        .font-size(12);
+    }
+
+    .share-link
+    {
+        padding-right: 14px;
+        margin-top: 4px;
+        display: block;
+
+        span
+        {
+            position: relative;
+            &:after
+            {
+                content: "\e625";
+                font-family: 'icomoon';
+                .font-size(10);
+                position: absolute;
+                bottom: 2px;
+                right: -13px;
+            }
+        }
+    }
+
+
+    .js & .addthis-container {
+        display: none;
+    }
+    .addthis-container {
+        margin: 0 0 -2px;
+        width: 144px;
+    }
+}
+
+.screen-480-up()
+{
+    .share-panel
+    {
+
+        .share-link
+        {
+            display: inline;
+        }
+    }
+}

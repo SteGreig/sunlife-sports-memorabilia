@@ -1,0 +1,42 @@
+﻿.tick-list
+{
+    text-align: center;
+    margin: 0 20px 20px;
+
+    ul
+    {
+        margin: 0 0 0 12px;
+        padding: 0;
+        text-align: left;
+        overflow: visible;
+        .inline-block();
+
+        li
+        {
+            display: block;
+            padding: 14px 36px 14px 46px;
+            border: 1px solid #dee3f2;
+            background: #fff;
+            margin: 10px 0;
+            font-weight: bold;
+            position: relative;
+            line-height: normal;
+            .font-size(15);
+
+            &:before
+            {
+                content: '';
+                width: 45px;
+                height: 45px;
+                position: absolute;
+                top: -1px;
+                left: -23px;
+                background: url(/source/images/ticklist-icon.png) top left no-repeat;
+            }
+
+            .list-item-text
+            {
+            }
+        }
+    }
+}

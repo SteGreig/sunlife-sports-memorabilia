@@ -1,0 +1,180 @@
+﻿.page-banner
+{
+    position: relative;
+    height:auto;
+    background-color: #1c3660;
+    font-size:0;
+    text-align: center;
+    padding: 0;
+
+    &:before {
+        height: 100%;
+        content: '';
+        width: 0;
+        .inline-block(middle);
+        
+    }
+    
+    .page-banner-content {
+        display: none;
+    }
+
+    &.banner-with-text .page-banner-content {
+        position: relative;
+	    z-index: 2;
+        width: 90%;
+        margin: 20px auto;
+        padding-top:20px;
+        .inline-block(middle);
+    }
+
+    .offset-header & .page-banner-content {
+        margin-bottom: 40px;
+    }
+
+    .press-release-page & {
+        background-color: #e30613;
+    }
+    .blog-page & {
+        background-color: #671a56;
+    }
+
+
+    img
+    {
+        display: none;
+        margin: 0 auto;
+    }
+    .js & img {
+        top:0;
+    }
+    .js & .site-width {
+        position: relative;
+    }
+
+    /* Optional text area*/
+    .text {
+        position: relative;
+        text-align: center;
+	    padding:0 0 20px;
+        width:80%;
+        margin:0 auto;
+	    max-width: 700px;
+        h1 {
+            color:#fff;
+            font-family: @font-vag-light;
+            text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+            margin-bottom: 16px;
+            .font-size(20);
+            .line-height(30);
+        }
+        p {
+            color:#fff;
+            font-family: @font-vag-light;
+            text-shadow: 2px 2px 2px rgba(0,0,0,0.5);
+            margin:0 0 16px;
+            .font-size(16);
+            .line-height(18);
+        }
+    }
+}
+
+.screen-0-690()
+{
+    
+    .page-banner
+    {
+        .page-banner-state-indicator {
+            display: none;
+        }
+        // make the button less prominent on smaller screens
+        .btn,.btn.btn-large.btn-icon-left
+        {
+            background-image: none;
+            background-color: transparent;
+            box-shadow: 0 0 0 rgba(0,0,0,0);
+            margin: 0;
+            padding: 0;
+            [class^="icon-"]
+            {
+                background-color: transparent;
+                color:@color-btn-video;
+                width: auto;
+                .font-size(17);
+                line-height: 1.22;
+            }
+            [class^="icon-"] + a,
+            [class^="icon-"] + input {
+                padding: 0 0 0 26px;
+            }
+            a {
+                background-color: transparent;
+	            display: inline;
+                color:@color-btn-video;
+                .font-size(18);
+                &:hover,
+                &:active {
+                    background-color: transparent;
+                }
+            }
+
+            .btn-inner:hover {
+                [class^="icon-"]
+                {
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+}
+
+.screen-690-up()
+{
+    .page-banner
+    {
+        padding: 20px 0;
+        .js &.banner-with-image
+        {
+            background-color: transparent;
+            height: 360px;
+        }
+        &.offset-intro {
+            padding-bottom: 100px;
+        }
+        &.offset-breadcrumbs .page-banner-content {
+            padding-top: 60px;
+        }
+
+        .page-banner-state-indicator
+        {
+            display: block;
+        }
+
+        img
+        {
+            display: block;
+        }
+
+
+        .text h1
+        {
+            margin-bottom: 16px;
+        }
+
+        .blog-page &,.press-release-page & {
+
+            .text h1 {
+                .font-size(30);
+                .line-height(32);
+            }
+            .text p {
+                .font-size(18);
+                .line-height(20);
+            }
+
+        }
+        .text p {
+            margin:0 52px 16px;
+        }
+    }
+}

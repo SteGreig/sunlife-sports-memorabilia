@@ -1,0 +1,96 @@
+.category-list {
+        text-align: center;
+	    position: relative;
+        margin: 20px 0;
+        ul {
+            background: #f0f2f2;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 0 6px rgba(0,0,0,0.2);
+            .inline-block();
+        }
+        li {
+            float: left;
+
+            .font-size(15);
+
+            a {
+                display: block;
+	            padding: 20px 30px;
+                text-shadow: 1px 1px 1px #fff;
+                text-decoration: none;
+                text-transform: uppercase;
+                color: #666;
+
+                &:hover,&:focus, &.selected {
+                    color:#fff;
+                    text-shadow: 1px 1px 1px #006a91;
+                }
+                
+                &:hover,&:focus {
+                    background:lighten(#007eac, 2%);
+                }
+                &.selected,&:active {
+                    background: #007eac;
+                }
+            }
+
+        }
+        
+    }
+.screen-0-690()
+{
+    .category-list {
+        margin: 15px 15px 8px;
+
+        .category-select
+        {
+            display: block;
+            border-radius: 4px;
+            padding: 10px;
+            box-shadow: 0 0 6px rgba(0,0,0,0.2);
+            width: 100%;
+            background: #fff;
+            .box-sizing(border-box);
+            .font-size(14);
+            .line-height(16);
+        }
+
+        ul {
+            display: none;
+        }
+        li {
+            float: none;
+
+            a {
+                border-bottom: 1px solid #dcdddd;
+                
+                &:hover,&:focus {
+                    border-bottom: 1px solid #007eac;
+                }
+                &.selected,&:active {
+                    border-bottom: 1px solid #007eac;
+                }
+            }
+
+            &:last-child {
+                a,a:hover,a:focus, a.selected {
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+    
+}
+
+.screen-690-up()
+{
+    .category-list
+    {
+        margin-top:-30px;
+
+        .category-select {
+            display: none;
+        }
+    }
+}

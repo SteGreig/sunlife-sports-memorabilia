@@ -1,0 +1,177 @@
+.main-nav-sector {
+
+    ul {
+        display: none;
+    }
+}
+
+.screen-890-up()
+{
+
+    .main-nav-sector
+    {
+        .navPanel();
+        .clearfix();
+
+        ul
+        {
+            display: block;
+            float: right;
+        }
+
+        .section-link
+        {
+            margin-left: 18px;
+            position: relative;
+            float: left;
+            font-family: @font-vag-light;
+            .font-size(16);
+
+            > a
+            {
+                display: block;
+                color: #4d4d4d;
+                text-decoration: none;
+                padding: 10px 20px;
+                border-radius: 3px;
+                background-color: transparent;
+                position: relative;
+                z-index: 2;
+                transition: none;
+            }
+
+            &.selected > a,
+            &:hover > a,
+            > a:focus,
+            > a:hover
+            {
+                background: #fff;
+                color: #4d4d4d;
+            }
+        }
+
+        .no-touch-support & .has-children
+        {
+
+            > a
+            {
+                position: relative;
+                padding-right: 40px;
+
+                &:after
+                {
+                    content: "\e621";
+                    position: absolute;
+                    top: 13px;
+                    right: 18px;
+                    speak: none;
+                    font-family: icomoon;
+                    .font-size(13);
+                }
+            }
+
+            .no-touch-support&:hover
+            {
+                .sub-list
+                {
+                    display: block;
+                }
+            }
+        }
+
+        .sub-list
+        {
+            display: none;
+            float: none;
+            position: absolute;
+            top: 100%;
+            right: -10px;
+            padding: 16px 0 0;
+            z-index: 2;
+            width: 400px;
+            /* IE needs a background image or background color for the hover state to work correctly*/
+            background: url(/source/images/transparent.gif); 
+
+            ul
+            {
+                background: #fff;
+                padding: 0;
+                border-radius: 3px;
+                box-shadow: 2px 2px 3px rgba(0,0,0,0.3);
+                position: relative;
+
+                li
+                {
+                    display: block;
+                    font-family: @font-vag-light;
+
+                    &:first-child
+                    {
+                        a
+                        {
+                            border-radius: 3px 3px 0 0;
+                            position: relative;
+
+                            &:before
+                            {
+                                content: '';
+                                width: 0;
+                                height: 0;
+                                border: 10px solid transparent;
+                                border-bottom-color: #fff;
+                                position: absolute;
+                                top: -16px;
+                                right: 24px;
+                            }
+
+                            &:hover
+                            {
+                                &:before
+                                {
+                                    border-bottom-color: #ffdd00;
+                                }
+                            }
+                        }
+                    }
+
+                    &:last-child
+                    {
+                        a
+                        {
+                            border-bottom: none;
+                            border-radius: 0 0 3px 3px;
+                        }
+                    }
+                }
+
+                a
+                {
+                    color: #4d4d4d;
+                    padding: 12px 16px;
+                    display: block;
+                    border-bottom: 1px solid #c9c9c9;
+                    text-decoration: none;
+
+                    &:hover, &:focus
+                    {
+                        background-color: #ffdd00;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.screen-1000-up()
+{
+    .main-nav-sector
+    {
+        .section-link
+        {
+            .font-size(20);
+        }
+        .section-link .sub-list  li {
+            .font-size(18);
+        }
+    }
+}

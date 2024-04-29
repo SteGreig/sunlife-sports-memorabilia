@@ -1,0 +1,126 @@
+﻿.header {
+    .utility {
+        display: none;
+
+        li {
+            font-family: @font-vag-light;
+
+            a {
+                color: @color-sky;
+                text-decoration: none;
+                font-family: @font-vag-light;
+
+                &:before {
+                    font-family: icomoon;
+                    position: absolute;
+	                top:0;
+                    left:0;
+                }
+
+                &:focus, &:hover {
+                    color: @color-brandDefault;
+                }
+
+                &[class^="icon-"] {
+                    color: @color-brandDefault;
+                    padding-left: 22px;
+                    position: relative;
+                }
+            }
+        }
+    }
+}
+
+.screen-690-up() {
+    .responsive-nav {
+        .utility-title {
+            display: none;
+        }
+
+        .utility {
+            display: none;
+        }
+    }
+
+    .header {
+        .utility {
+            display: block;
+            .navPanel();
+            background-color: #fff;
+            border: none;
+
+            .container {
+                max-width: 1170px;
+                margin: 0 auto;
+                padding: 0 20px;
+                text-align: center;
+            }
+
+
+            li {
+                .inline-block();
+                margin: 0;
+                background-color: transparent;
+                border-left: 1px solid #d9d9d9;
+                padding: 4px 0.8em;
+                .font-size(14);
+
+                a {
+                    display: block;
+
+                    &:before {
+                        margin-right: 5px;
+                    }
+                }
+
+                &:first-child {
+                    border: none;
+                }
+
+                span {
+                    color: @color-sky;
+                    .font-size(15);
+                }
+            }
+
+            a.tel {
+                color: @color-sky;
+                cursor: default;
+                .inline-block();
+            }
+        }
+    }
+}
+
+.screen-890-up() {
+    .header {
+        .utility {
+            display: block;
+            background-color: transparent;
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 0;
+            margin-top: 41px;
+            border: none;
+            width: 100%;
+            z-index: 2;
+            .container {
+                text-align: left;
+            }
+
+            &:before {
+                display: none;
+            }
+
+            ul {
+                float: right;
+            }
+
+            li {
+                margin: 0;
+                padding: 4px 20px;
+            }
+        }
+    }
+}

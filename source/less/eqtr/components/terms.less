@@ -1,0 +1,87 @@
+﻿.terms {
+    padding: 50px 20px 30px;
+
+    
+    .terms-header {
+        margin-bottom: 30px;
+
+        .title {
+            .font-size(24);
+            line-height: 1.2;
+            border-bottom: 1px solid #E6E6E6;
+            padding-bottom: 30px;
+            text-align:center;
+        }
+    }
+
+    .base-terms {
+        margin: 0 auto;
+    }
+
+    .terms-info-panel {
+        border:1px solid #C7CEE7;
+        border-radius:5px;
+        margin-bottom:3em;
+        padding:15px 15px 0;
+    }
+
+    .richtext h1, h2, h3, h4, h5, h6 {
+        font-family: @font-default;
+    }
+
+    .richtext h1,
+    .richtext h2 {
+        .font-size(20);
+        .line-height(22);
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+    .richtext h3 {
+        .font-size(18);
+        .line-height(22);
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+    .richtext h4,
+    .richtext h5,
+    .richtext h6 {
+        .font-size(16);
+        .line-height(22);
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+    .richtext p {
+        .font-size(13);
+        .line-height(20);
+        margin-bottom: 1.4em;
+    }
+
+    .richtext ul {
+        .font-size(13);
+        .line-height(20);
+        margin: 0 0 15px 0;
+    }
+
+    .richtext ol {
+        .font-size(13);
+        .line-height(20);
+        margin: 0 0 10px 0;
+    }
+}
+
+.screen-768-up()
+{
+    .terms
+    {
+        padding: 50px 70px 30px;
+
+        .base-terms {
+            margin: 0 auto;
+            width: 70%;
+        }
+    }
+
+}

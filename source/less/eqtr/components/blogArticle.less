@@ -1,0 +1,167 @@
+.article {
+    margin-bottom: 20px;
+    .component-border();
+
+    .richtext {
+        .clearfix();
+    }
+
+    .download-bar-group {
+        margin:40px 0 0;
+    }
+}
+
+.article-title {
+    color: #555;
+    font-family: @font-vag-light;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.article-image {
+    overflow: hidden;
+	border-radius: 4px;
+    .inline-block();
+
+    img {
+        display: block;
+    }
+}
+
+.author
+{
+    
+    .author-image,
+    .author-text
+    {
+        .inline-block(middle);
+    }
+    .author-image {
+        margin-right: 16px;
+    }
+    .author-text
+    {
+        color: #555;
+        font-family: @font-vag-light;
+        .highlight {
+            color: #007dac;
+        }
+    }
+}
+
+
+.share
+{
+    border-top: 1px solid #e6e6e6;
+    padding-top: 16px;
+    margin: 16px 0 0;
+    .clearfix();
+    .share-title
+    {
+        color: #555;
+        font-family: @font-vag-light;
+        float:left;
+        margin: 4px 0;
+    }
+
+    .static-share-buttons{
+        float: right;
+    }
+    .addthis-container
+    {
+        float: right;
+        width: 144px;
+    }
+
+}
+
+.screen-0-690()
+{
+    .article
+    {
+        padding: 10px 20px;
+        .metadata
+        {
+            margin-bottom: 30px;
+            p
+            {
+                .font-size(12);
+                .line-height(16);
+            }
+        }
+    }
+
+    .article-title
+    {
+        padding-bottom: 20px;
+        margin-bottom: 10px;
+        .font-size(26);
+        .line-height(28);
+    }
+
+    .article-image {
+        margin-bottom: 30px;
+    }
+
+    .author
+    {
+        .author-text
+        {
+            .font-size(16);
+            .line-height(18);
+        }
+    }
+
+    .share {
+        .share-title {
+            .font-size(16);
+            .line-height(18);
+        }
+    }
+}
+
+.screen-690-up()
+{
+
+    .article
+    {
+        padding: 30px 40px;
+
+        .metadata
+        {
+            margin-bottom: 30px;
+            p
+            {
+                .font-size(12);
+                .line-height(16);
+            }
+        }
+    }
+
+    .article-title
+    {
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        .font-size(42);
+        .line-height(44);
+    }
+
+    .article-image {
+        margin-bottom: 30px;
+    }
+
+    .author
+    {
+        .author-text
+        {
+            .font-size(21);
+            .line-height(23);
+        }
+    }
+
+    .share {
+        .share-title {
+            .font-size(21);
+            .line-height(23);
+        }
+    }
+}

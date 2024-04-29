@@ -1,0 +1,250 @@
+﻿.tooltip
+{
+    position: relative;
+
+    .tooltip-msg
+    {
+        .inline-block();
+        color: #FFF;
+        padding: 15px;
+        .font-size(13);
+        line-height: 1.4;
+        border-radius: 5px;
+        position: relative;
+        font-family: @font-default;
+
+        &:before
+        {
+            width: 0;
+            height: 0;
+            content: "";
+            display: block;
+            position: absolute;
+            z-index: 150;
+            border: 8px solid transparent;
+            top: auto;
+            bottom: -15px;
+            left: 12px;
+        }
+    }
+
+    &.tooltip-instruction
+    {
+        .tooltip-msg
+        {
+            background-color: #267DA5;
+
+            &:before
+            {
+                border-top-color: #267DA5;
+            }
+        }
+    }
+
+    &.tooltip-information
+    {
+        .tooltip-msg
+        {
+            color: #1c3660;
+            background-color: #a0c519;
+
+            &:before
+            {
+                border-top-color: #a0c519;
+            }
+        }
+    }
+
+    &.tooltip-important {
+        .tooltip-msg
+        {
+            background-color: @color-error;
+
+            &:before
+            {
+                border-top-color: @color-error;
+            }
+        }
+        a {
+            color:#fff;
+            text-decoration: underline;
+        }
+    }
+
+    &.tooltip-error
+    {
+        margin: 15px 0 -15px;
+
+        .tooltip-msg
+        {
+            color: #FFF;
+            background-color: @color-error;
+
+            &:before
+            {
+                top: -15px;
+                bottom: auto;
+                left: 12px;
+                border-top-color: transparent;
+                border-bottom-color: @color-error;
+            }
+
+            .error
+            {
+                color: #FFF;
+                .font-size(13);
+                font-family: @font-default;
+                line-height: 1.4;
+                display: block;
+            }
+        }
+    }
+}
+
+
+.tooltip-trigger {
+    display: none;
+}
+.js .tooltip-instruction,
+.js .tooltip-information {
+    display:none;
+}
+
+/* Hide the error tooltip on completed fields */
+.tooltip-error,
+.field-row-complete .tooltip-error {
+    display: none;
+}
+.field-row-error .tooltip-error {
+    display: block;
+}
+
+
+.field-row-error .tooltip-information,
+.field-row-error .tooltip-important {
+    display: none;
+}
+
+.field-row-complete .tooltip-information {
+    display: block;
+}
+
+.screen-0-768()
+{
+    .tooltip-trigger
+    {
+        width: 20px;
+        height: 20px;
+        background: url("/source/images/progress-sprite.png") no-repeat 0 -101px;
+        margin-left: 5px;
+        content: "";
+        text-indent: -9999em;
+        .inline-block();
+    }
+
+    .js .open-tooltip
+    {
+        display: block;
+    }
+
+    .tooltip
+    {
+         .tooltip-msg {
+            margin-bottom: 15px;
+         }
+    }
+}
+
+.screen-768-up()
+{
+
+    .js .tooltip
+    {
+        position: absolute;
+        min-width: 275px;
+        left: 100%;
+        top: 0;
+        margin-left: 15px;
+        z-index: 100;
+
+        .tooltip-msg
+        {
+            &:before
+            {
+                top: auto;
+                bottom: auto;
+                left: -15px;
+                bottom: auto;
+                border: 8px solid transparent;
+            }
+        }
+
+        &.tooltip-instruction
+        {
+            .tooltip-msg
+            {
+                &:before
+                {
+                    border-right-color: #267DA5;
+                }
+            }
+        }
+
+        &.tooltip-information
+        {
+            min-width: 400px;
+            .tooltip-msg
+            {
+                &:before
+                {
+                    border-right-color: #a0c519;
+                }
+            }
+        }
+
+        &.tooltip-important
+        {
+            min-width: 400px;
+            .tooltip-msg
+            {
+                &:before
+                {
+                    border-right-color: @color-error;
+                }
+            }
+        }
+
+        &.tooltip-error
+        {
+            margin: 0 0 0 15px;
+
+            .tooltip-msg
+            {
+
+                &:before
+                {
+                    border-right-color: @color-error;
+                }
+            }
+        }
+    }
+    
+    /* Hide the instruction tooltip on validated fields*/
+    .field-row-error.field-row-focus .tooltip-instruction,
+    .field-row-complete.field-row-focus .tooltip-instruction {
+        display: none;
+    }
+
+    .field-row-complete.field-row-focus .tooltip-important {
+        display: block;
+    }
+
+    /* Show the instuction tooltip on focus */
+    .field-row-focus .tooltip-instruction
+    {
+        display: block;
+    }
+
+    
+ 
+}

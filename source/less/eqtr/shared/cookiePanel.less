@@ -1,0 +1,112 @@
+﻿.cookie-panel {
+    background: #182a48;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: none;
+    z-index: 1000;
+
+    .focused & {
+        position:absolute;
+    }
+
+    .js & {
+        display: block;
+    }
+
+    .container {
+        position: relative;
+        max-width: 1170px;
+        margin: 0 auto;
+        padding: 1.5em 20px;
+    }
+
+    p {
+        .font-size(12);
+        .line-height(16);
+    }
+
+    a {
+        color: #fff;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+
+    .btn-container {
+        margin: 20px 0 0;
+        .inline-block();
+    }
+
+    .btn {
+        line-height: normal;
+        font-weight: normal;
+        background: #1c3660;
+        overflow: visible;
+        border: none;
+        border-radius: 4px;
+        font-family: @font-default;
+        color: #fff;
+        padding: 10px 15px 10px 40px;
+        margin: 0;
+        text-decoration: none;
+        position: relative;
+        box-shadow: none;
+        .font-size(14);
+
+        &:before {
+            content: "\e616";
+            position: absolute;
+            top: 5px;
+            left: 10px;
+            speak: none;
+            font-family: icomoon;
+            z-index: 2;
+            .font-size(23);
+        }
+        
+    }
+}
+.screen-890-up
+{
+    .cookie-panel
+    {
+        position: static;
+        .container
+        {
+            padding:3em 30px;
+        }
+        .content
+        {
+            margin-top: 0;
+            margin-right: 130px;
+        }
+        .btn-container {
+            position: absolute;
+	        top:0;
+            right:30px;
+            margin:0;
+            
+        }
+        .btn {
+            padding:15px 20px 15px 50px;
+            border-radius:0 0 4px 4px;
+            .font-size(14);
+
+            &:before
+            {
+                content:"\e616";
+                position: absolute;
+                top: 50%;
+                margin-top:-0.5em;
+                left: 14px;
+                speak:none;
+                font-family: icomoon;
+                z-index: 2;
+                .font-size(23);
+            }
+        }
+    }
+}
+

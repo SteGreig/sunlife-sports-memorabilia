@@ -1,0 +1,80 @@
+﻿.supplementary {
+    .aside-title {
+        font-family: @font-vag-light;
+        border-bottom: 1px solid #dae0e3;
+        padding: 0 0 12px;
+        margin: 0 0 22px;
+    }
+    .supplementary-block {
+        margin-bottom: 20px;
+        background-color: #FFF;
+        border: 1px solid #cfd5e7;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    .supplementary-heading {
+        padding: 20px 15px;
+        border-bottom: 1px solid #cfd5e7;
+
+        .supplementary-title {
+            .font-size(28);
+            line-height: 1.2;
+        }
+    }
+
+    .supplementary-item {
+        padding: 15px;
+        border-bottom: 1px dashed #CCC;
+
+        &:last-child {
+            border-bottom:none;
+        }
+
+        .supplementary-item-heading {
+            margin-bottom: 10px;
+        }
+
+        .supplementary-item-title {
+            .font-size(15);
+            line-height: 1.3;
+        }
+
+        .supplementary-item-content {
+        }
+
+        .supplementary-item-action {
+        }
+    }
+
+    .phone-number {
+        display: block;
+        color: @color-sky;
+        font-family: @font-vag-light;
+        margin-top: 10px;
+	    .font-size(24);
+    }
+}
+.screen-0-690() {
+    .supplementary
+    {
+        .aside-title
+        {
+            
+            .font-size(16);
+            .line-height(18);
+        }
+    }
+}
+.screen-690-up()
+{
+    .supplementary
+    {
+        .aside-title
+        {
+            
+            .font-size(32);
+            .line-height(34);
+        }
+    }
+}

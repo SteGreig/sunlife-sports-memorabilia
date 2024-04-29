@@ -1,0 +1,66 @@
+﻿
+.iframe-popup {
+    display: none;
+}
+
+.show-iframepopup {
+    overflow: hidden;
+
+    .iframe-popup {
+        top: 0;
+        left: 0;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        display: block;
+        iframe {
+            width: 100%;
+            height: 100%;
+        }
+        .popup-controls {
+            position: relative; 
+            margin-bottom: -44px;   
+        }
+        .popup-controls-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 9px;
+            text-align: right;
+        }
+        .close {
+            text-decoration: none;
+		    background: url("/source/images/close-icon.png") center right no-repeat;
+		    padding: 18px 50px 18px 0;
+            margin-right: 54px;
+		    .font-size(16);
+		    .line-height(34);
+
+		    &:hover {
+			    text-decoration: underline;
+		    }        
+        }
+    }
+}
+
+.screen-0-690(){
+    .show-iframepopup {
+        .iframe-popup {
+            .close {
+                margin-right: 28px;      
+            }
+            .popup-controls {
+                margin-bottom: -65px;   
+            }
+        }
+    }
+}
+.screen-690-up(){
+    .show-iframepopup {
+        .iframe-popup {
+            .close {
+                right: 54px;      
+            }
+        }
+    }
+}

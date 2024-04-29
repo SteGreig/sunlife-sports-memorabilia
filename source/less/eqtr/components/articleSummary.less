@@ -1,0 +1,238 @@
+/* Article Summary */
+.article-summary-item {
+    position: relative;
+	.component-border();
+    .clearfix();
+    
+
+    .article-summary-header {
+
+        .category-icon {
+            float:left;
+            margin-right: 10px;
+        }
+        .article-summary-title {
+            overflow: hidden;
+        }
+    }
+    
+
+}
+
+.article-summary-content {
+    .metadata {
+        margin: 16px 0;
+
+        p
+        {
+            .font-size(12);
+            .line-height(16);
+        }
+    }
+    .cta-panel {
+        border-top: 1px solid #e6e6e6;
+        padding: 16px 0 2px;
+        .btn {
+            margin:0 16px 0 0;
+        }
+    }
+}
+
+.article-summary-title {
+    font-family: @font-vag-light;
+    color: #555;
+
+    a {
+        color: #555;
+        text-decoration: none;
+    }
+}
+.article-summary-text {
+    p {
+        color: #666;
+    }
+}
+
+.pressrelease-summary-item
+{
+    .article-summary-title {
+        padding: 0 0 16px;
+        border-bottom: 1px solid #e6e6e6;
+    }
+}
+
+
+/* Feature Summary Article */
+.article-feature {
+}
+
+
+.screen-0-690()
+{
+    .article-summary-item
+    {
+        margin-bottom: 32px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .article-summary-content
+    {
+        padding: 2em;
+        .cta-panel {
+            .btn {
+                margin:0 16px 16px 0;
+            }
+        }
+    }
+    .article-summary-title
+    {
+        margin-bottom: 16px;
+        .font-size(22);
+        .line-height(24);
+    }
+    .article-summary-text
+    {
+        p
+        {
+            .font-size(14);
+            .line-height(16);
+        }
+    }
+}
+.screen-690-up()
+{
+    .article-summary-item
+    {
+        margin-bottom: 32px;
+
+        &:last-child
+        {
+            margin-bottom: 0;
+        }
+    }
+
+    .article-summary-item-container
+    {
+        padding: 32px 0;
+        border-radius: 4px;
+        .clearfix();
+    }
+
+    .article-summary-image-container
+    {
+        float: left;
+        max-width: 40%;
+        border-radius: 4px 0 0 4px;
+        margin: 0 0 0 32px;
+        overflow: hidden;
+        .box-sizing(border-box);
+
+        .js &
+        {
+            margin: -32px 0;
+        }
+
+        img
+        {
+            display: block;
+        }
+    }
+
+    .article-summary-content
+    {
+        padding: 0 52px;
+        overflow: hidden;
+        .js & {
+            padding: 0 32px;
+        }
+        .meta-data
+        {
+            margin: 16px 0;
+
+            p
+            {
+                .font-size(12);
+                .line-height(16);
+            }
+        }
+
+        .cta-panel
+        {
+            padding: 16px 0 2px;
+        }
+    }
+
+
+    .article-summary-title
+    {
+        margin-bottom: 16px;
+        .font-size(32);
+        .line-height(34);
+    }
+
+    .article-summary-text
+    {
+        p:first-child
+        {
+            .font-size(18);
+            .line-height(22);
+        }
+
+        p
+        {
+            .font-size(14);
+            .line-height(16);
+        }
+    }
+
+
+    .article-feature
+    {
+        margin-bottom: 0;
+
+        .article-summary-item-container
+        {
+            .js &
+            {
+                padding: 0;
+            }
+        }
+
+        .article-summary-content
+        {
+
+            .js &
+            {
+                position: relative;
+                max-width: 574px;
+                margin: 32px 100px;
+                padding: 32px;
+                border-radius: 4px;
+                .inline-block();
+                .see-thru(#fff, 0.9);
+            }
+        }
+
+        .article-summary-image-container
+        {
+            .js &
+            {
+                margin: 0;
+            }
+        }
+    }
+
+    .pressrelease-summary-item
+    {
+        .article-summary-text
+        {
+            p:first-child
+            {
+                .font-size(14);
+                .line-height(16);
+            }
+        }
+    }
+}

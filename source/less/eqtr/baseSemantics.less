@@ -1,0 +1,134 @@
+@-ms-viewport {
+    width: device-width;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    background: #FFF;
+    font-family: @font-default;
+    color: @color-brandDefault;
+    overflow-y: scroll;
+}
+
+a {
+    color: #007eac;
+
+    &:link,
+    &:visited {
+        text-decoration: underline;
+        .transition(color, 0.25s);
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+        color: #1c3660;
+    }
+}
+
+.hide-txt {
+    .hide-element();
+}
+
+h1,h2,h3,h4,h5,h6 {
+    color:#555;
+}
+
+
+.state-indicator {
+    position: absolute;
+    top: -999em;
+    left: -999em;
+    height: 1px;
+}
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.fadeInDown {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+.screen-690-up() {
+    .state-indicator {
+        height: 2px;
+    }
+}
+
+.screen-890-up() {
+}
+
+.screen-1200-up() {
+    .state-indicator {
+        height: 3px;
+    }
+}

@@ -1,0 +1,362 @@
+﻿
+
+/* Base/Shared styles for Quote Summary variations */
+.quotesummary {
+	.quotesummary-heading {
+        text-align: center;
+        font-family: @font-vag-light;
+	}
+    .quotesummary-subtitle {
+        font-weight:bold;
+        .font-size(15);
+        .line-height(17);
+    }
+    .quotesummary-item-group {
+       .quotesummary-item {
+            margin-bottom: 4px;
+        }
+    }
+    .quotesummary-item-title {
+        font-family: @font-vag-light;
+
+        .amount
+        {
+            color: #e47609;
+        }
+    }
+    .quotesummary-item-description {
+        .font-size(15);
+        .line-height(17);
+    }
+
+    
+    .feature-freefuneral-selected,
+    .feature-freefuneral {
+    
+        .icon 
+        {
+            color: #0b6b78;
+        }
+    }
+    .feature-premiumcap-selected,
+    .feature-premiumcap
+    {
+
+        .icon
+        {
+            color: #854878;
+        }
+    }
+
+}
+
+
+/* Main Content Quote Summary */
+.quotesummary-main
+{
+    margin: 1em 0;
+
+    .quotesummary-heading
+    {
+        margin-bottom: 2em;
+    }
+
+    .quotesummary-title
+    {
+        margin-bottom: 0.2em;
+        .font-size(28);
+        .line-height(32);
+    }
+
+    .quotesummary-content
+    {
+        border: 1px solid #dee3f2;
+        border-radius: 4px;
+    }
+
+    .quotesummary-contentinner
+    {
+        margin: 4px;
+        border-radius: 4px;
+    }
+
+    .quotesummary-item-content
+    {
+        margin: 2em 0;
+        padding: 2em;
+        overflow: hidden;
+    }
+
+    .js & .quotesummary-item-content
+    {
+        margin: 0;
+    }
+
+    .quotesummary-item-group
+    {
+        .quotesummary-item
+        {
+            background: #edf2f7;
+        }
+    }
+
+    .quotesummary-item-title
+    {
+        .font-size(22);
+        .line-height(24);
+
+        .amount
+        {
+            color: #e47609;
+        }
+    }
+
+
+    &.premium-cap-selected {
+        .feature-premiumcap-selected {
+            display:block;
+        }
+        .feature-premiumcap-default {
+            display:none;
+        }
+    }
+    &.free-funeral-selected {
+        .feature-freefuneral-selected {
+            display:block;
+        }
+        .feature-freefuneral-default {
+            display:none;
+        }
+    }
+
+    .quotesummary-feature {
+        display: none;
+    }
+
+    .quotesummary-extendedcontent
+    {
+        background: #edf2f7;
+        padding: 3.6em 3.5em 15px;
+    }
+
+    .quotesummary-extendedcontent .quotesummary-extendedcontent-title
+    {
+        border-bottom: 1px dashed #cfd5e7;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        .font-size(22);
+        .line-height(24);
+    }
+
+    .quotesummary-extendedcontent .richtext
+    {
+        margin: 0;
+        color: #555;
+    }
+    /* Numbered list style */
+    .numbered-list-item-number
+    {
+        padding: 30px;
+        border-radius: 6px;
+        .font-size(18);
+    }
+
+    .number
+    {
+        width: 30px;
+        height: 30px;
+        font-size: 18px;
+        line-height: 30px;
+    }
+
+    .feature-freefuneral-selected,
+    .feature-freefuneral {
+    
+        .icon 
+        {
+            margin-bottom: 4px;
+            .inline-block(middle);
+            .font-size(25);
+        }
+    }
+    .feature-premiumcap-selected,
+    .feature-premiumcap
+    {
+
+        .icon
+        {
+            margin-bottom: 4px;
+            .inline-block(middle);
+            .font-size(25);
+        }
+    }
+}
+
+
+/* supplementary Quote Summary */
+.quotesummary-supplementary {
+    margin-bottom: 20px;
+    .component-border();
+
+
+    .quotesummary-heading {
+        padding: 20px 15px;
+        border-bottom: 1px solid #cfd5e7;
+
+        .quotesummary-title {
+            .font-size(28);
+            line-height: 1.2;
+        }
+    }
+
+    .quotesummary-contentinner {
+        margin: 4px;
+        border-radius: 4px;
+    }
+    
+
+    .quotesummary-item {
+        position: relative;
+        min-height: 50px;
+        .quotesummary-item-content {
+            margin: 0 0 0 50px;
+            padding: 1.5em 1em;
+            overflow: hidden;
+        } 
+    }
+       
+
+    .quotesummary-item-title {
+        margin-bottom: 0.2em;
+        .font-size(15);
+        .line-height(17);
+    }
+    .quotesummary-item-description {
+        .font-size(12);
+        .line-height(14);
+    }
+	/* Numbered list style */
+    .numbered-list-item-number
+    {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50px;
+        height: 100%;
+        border-radius: 6px;
+        .font-size(14);
+    }
+    .number {
+        margin: 15px;
+        width: 20px;
+        height: 20px;
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .quotesummary-feature .icon {
+        float:left;
+        margin-right:5px; 
+        .font-size(16);
+    }
+    .quotesummary-feature p {
+        overflow: hidden;
+    }
+
+    .numbered-list-roundel {
+        margin: -4px -4px 0;
+        .quotesummary-item {
+            border-bottom: 1px dashed #ccc; 
+            margin-bottom: 0;
+            min-height: initial;
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+        
+        .number {
+            font-family: @font-vag-light;
+            background-color: transparent;
+            margin: 14px;
+            .font-size(14);
+            .line-height(22);
+        }
+    
+        .quotesummary-item-title {
+            margin: 0;
+        }
+
+        &.paymenttype-lumpsum {
+            .numbered-list-item-number {
+                background: transparent url(/source/images/numberlist-icon-pink.png) center center no-repeat;
+            }
+
+            .quotesummary-item-title .amount {
+                color: #b10053;
+            }
+            .number {
+                text-shadow: 2px 2px 1px #aa004f;
+            }
+        }
+        &.paymenttype-lifeinsurance {
+            .numbered-list-item-number {
+            background: transparent url(/source/images/numberlist-icon-blue.png) center center no-repeat;
+        }
+            .quotesummary-item-title .amount {
+                color: #007ba7;
+            }
+            .number {
+                text-shadow: 2px 2px 1px #0076a1;
+            }
+        }
+    }
+}
+
+.screen-0-690()
+{
+    .quotesummary-main
+    {
+        .quotesummary-content {
+            border:none;
+        }
+        .quotesummary-contentinner {
+            margin: 0;
+        }
+
+        .quotesummary-title
+        {
+            .font-size(26);
+            .line-height(28);
+        }
+        .quotesummary-extendedcontent
+        {
+            background: none;
+            padding: 1.6em 0 0;
+        }
+        .quotesummary-item-title
+        {
+            .font-size(22);
+            .line-height(24);
+
+            .amount
+            {
+                color: #e47609;
+            }
+        }
+
+        .numbered-list-item-number
+        {
+            margin: 1em 0 1em 1em;
+            padding: 10px;
+        }
+    }
+}
+.screen-690-up()
+{
+    .quotesummary-main
+    {
+        margin: 1em 0 40px;
+        padding: 0 6em;
+    }
+}
+

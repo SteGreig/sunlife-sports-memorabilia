@@ -1,0 +1,193 @@
+﻿
+.product-feature-select
+{
+    .product-feature-title
+    {
+        font-family: @font-vag-light;
+        overflow: hidden;
+        border-bottom: 1px dashed #cfd5e7;
+        padding-bottom: 15px;
+        margin-bottom: 20px;
+    }
+    .product-feature-description
+    {
+        border-bottom: 1px dashed #cfd5e7;
+        margin-bottom: 20px;
+    }
+    .additional-cost
+    {
+        border: 1px dashed #dae0e3;
+        border-bottom: none;
+        padding: 0.6em;
+
+        p
+        {
+            color: #555;
+            font-weight: bold;
+	
+            .font-size(16);
+            .line-height(18);
+            
+        }
+    }
+
+    .custom-input-group & label {
+        font-weight: bold;
+    }
+    .field-control
+    {
+        margin-bottom: 0;
+    }
+}
+
+
+.product-feature-freefuneral {
+    
+    .product-feature-title,.icon 
+    {
+        color: #0b6b78;
+    }
+
+    .highlight {
+        color: #0b6b78;
+    }
+
+    .additional-cost p span {
+        color: #0b6b78;
+    }
+
+    .label-selected {
+        color: #0b6b78;
+    }
+
+    .form .custom-input-group & [type="radio"]:checked + label::before {
+        content: url('/source/images/ui-form-radio-checked-freefuneral.png');
+    }
+    .form .custom-input-group & [type="checkbox"]:checked + label::before {
+        content: url('/source/images/ui-form-checkbox-checked-freefuneral.png');
+    }
+}
+
+
+
+.product-feature-premiumcap
+{
+
+    .product-feature-title, .icon
+    {
+        color: #671a56;
+    }
+
+    .highlight {
+        color: #671a56;
+    }
+
+    .additional-cost p span {
+        color: #671a56;
+    }
+
+    .label-selected {
+        color: #671a56;
+    }
+
+    .form .custom-input-group & [type="radio"]:checked + label::before {
+        content: url('/source/images/ui-form-radio-checked-premiumcap.png');
+    }
+
+    .form .custom-input-group & [type="checkbox"]:checked + label::before {
+        content: url('/source/images/ui-form-checkbox-checked-premiumcap.png');
+    }
+}
+
+
+
+.screen-0-690()
+{
+    .product-feature-select {
+        background: #fff;
+        border-radius: 0 4px 4px 4px;
+        border: 1px solid #cfd5e7;
+        padding: 22px;
+        position: relative;
+        .icon {
+            position: absolute;
+	        top: 22px;
+            left: 22px;
+            .font-size(28);
+            .line-height(28);
+        }
+        .product-feature-title
+        {
+            padding-left: 34px;
+            .font-size(22);
+            .line-height(24);
+        }
+    }
+}
+
+.screen-690-up()
+{
+
+    .product-feature-select
+    {
+        position: relative;
+        z-index: 20;
+        .clearfix();
+
+        .product-feature-select-item
+        {
+            background: #fff;
+            border-radius: 0 4px 4px 4px;
+            border: 1px solid #cfd5e7;
+            border-left: none;
+            padding: 22px;
+            position: relative;
+            margin-left:73px;
+            &:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                background-color: transparent;
+	            width: 100%;
+                height: 100%;
+                z-index: -5;
+                box-shadow: 0 0 6px rgba(0,0,0,0.2);
+            }
+        }
+        .icon {
+            background: #fff;
+            border-right: none;
+            border-radius: 4px 0 0 4px;
+            border: 1px solid #cfd5e7;
+            padding: 12px;
+            float:left;
+            position: relative;
+            .font-size(50);
+            .line-height(52);
+            &:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                background-color: transparent;
+	            width: 100%;
+                height: 100%;
+                z-index: -5;
+                box-shadow: 0 0 6px rgba(0,0,0,0.2);
+            }
+        }
+
+
+        .product-feature-heading
+        {
+            position: relative;
+        }
+
+        .product-feature-title
+        {
+            .font-size(22);
+            .line-height(24);
+        }
+    }
+}

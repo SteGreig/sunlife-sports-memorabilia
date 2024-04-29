@@ -1,0 +1,220 @@
+﻿// LESS Mixins
+// Includes CSS3 Cross Browser prefixes, shortcuts and old browser fallbacks
+
+
+// breakpoints: get em value. assuming default browser font-size is 16px.
+/*.em-breakpoint(@widthConstraints, @pxValue)
+{
+    ~(@widthConstraints: @pxValue / 16px;)
+}*/
+
+
+
+// CSS3 Columns
+
+.columns(@columns)
+{
+	-moz-column-count:@columns; /* Firefox */
+	-webkit-column-count:@columns; /* Safari and Chrome */
+	column-count:@columns;	
+}
+
+
+// sprite
+.sprite(@x, @y, @width, @height) {
+	background-image: url('/source/images/sprite.png');
+    background-position: @x @y;
+    background-repeat: no-repeat;
+	width: @width;
+	height: @height;
+}
+
+
+// retina images 
+.retina-image(@file, @type, @size: cover, @repeat: no-repeat, @posx: 0, @posy: 0)  {
+  background-image: url('@{file}.@{type}');
+  background-repeat: @repeat;
+  background-position: @posx @posy;
+  background-size: @size;
+    @media (min--moz-device-pixel-ratio: 1.25),
+         (-webkit-min-device-pixel-ratio: 1.25),
+         (min-device-pixel-ratio: 1.25),
+         (min-resolution: 1.25dppx) {
+      background-size: @size;
+      background-image: url('@{file}@2x.@{type}');
+      background-position: @posx * 2 @posy * 2;
+    }
+}
+
+// Gradients
+.gradient (@origin: top, @start: #ffffff, @stop: #000000) {
+	background-color: @start;
+	background-image: -webkit-linear-gradient(@origin, @start, @stop);
+	background-image: -moz-linear-gradient(@origin, @start, @stop);
+	background-image: -o-linear-gradient(@origin, @start, @stop);
+	background-image: -ms-linear-gradient(@origin, @start, @stop);
+	background-image: linear-gradient(@origin, @start, @stop);
+}
+
+.gradient-four (@origin: top, @start: #ffffff, @midone: #000000, @midtwo, @end) {
+	background-color: @start;
+	background-image: -webkit-linear-gradient(@origin, @start, @midone, @midtwo, @end);
+	background-image: -moz-linear-gradient(@origin, @start, @midone, @midtwo, @end);
+	background-image: -o-linear-gradient(@origin, @start, @midone, @midtwo, @end);
+	background-image: -ms-linear-gradient(@origin, @start, @midone, @midtwo, @end);
+	background-image: linear-gradient(@origin, @start, @midone, @midtwo, @end);
+}
+
+.gradient-three (@origin: top, @start: #ffffff, @middle: #000000, @end) {
+	background-color: @start;
+	background-image: -webkit-linear-gradient(@origin, @start, @middle, @end);
+	background-image: -moz-linear-gradient(@origin, @start, @middle, @end);
+	background-image: -o-linear-gradient(@origin, @start, @middle, @end);
+	background-image: -ms-linear-gradient(@origin, @start, @middle, @end);
+	background-image: linear-gradient(@origin, @start, @middle, @end);
+}
+
+.gradient-mirror (@origin: top, @ends: #ffffff, @middle: #000000) {
+	background-color: @ends;
+	background-image: -webkit-linear-gradient(@origin, @ends, @middle, @ends);
+	background-image: -moz-linear-gradient(@origin, @ends, @middle, @ends);
+	background-image: -o-linear-gradient(@origin, @ends, @middle, @ends);
+	background-image: -ms-linear-gradient(@origin, @ends, @middle, @ends);
+	background-image: linear-gradient(@origin, @ends, @middle, @ends);
+}
+
+.quick-gradient (@origin: left, @alpha: 0.2) {
+	background-image: -webkit-linear-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@alpha));
+	background-image: -moz-linear-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@alpha));
+	background-image: -o-linear-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@alpha));
+	background-image: -ms-linear-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@alpha));
+	background-image: linear-gradient(@origin, rgba(0,0,0,0.0), rgba(0,0,0,@alpha));
+}
+
+
+// Transitions
+
+.transition(@element: all, @duration:0.3s, @delay: 0, @ease: ease-in-out)
+{
+	-o-transition: @element @duration @ease;
+	-webkit-transition: @element @duration @ease;
+	-moz-transition: @element @duration @ease;
+	//-ms-transition: @element @duration @ease;
+	transition: @element @duration @ease;
+}
+
+// Size
+
+.size(@width, @height) {
+	width: @width;
+	height: @height;
+}
+
+// Box Sizing
+
+.box-sizing(@box-sizing) {
+	-moz-box-sizing: @box-sizing;
+	-webkit-box-sizing: @box-sizing; 
+	box-sizing: @box-sizing;
+}
+
+// Clearfix IE7+
+
+.clearfix()
+{
+	clear:both;
+	-ms-zoom: 1;
+    zoom: 1;
+
+	&:before,
+	&:after {
+	    content: "";
+	    display: table;
+	}
+	&:after {
+	    clear: both;
+	}
+}
+
+// Filters - Chrome 18+
+
+.filter(@filter)
+{
+	-moz-filter: @filter;
+	-webkit-filter: @filter;
+	-ms-filter: @filter;
+}
+
+.grayFilter()
+{
+	-moz-filter:  ~"grayscale(100%)";
+	-webkit-filter:  ~"grayscale(100%)";
+	-ms-filter:  ~"grayscale(100%)";
+	filter: ~"grayscale(100%)";
+}
+
+// Inline Block Fallback
+
+.inline-block(@valign: top)
+{
+	display:inline-block;
+	zoom: 1;
+    *display: inline;
+    vertical-align:@valign;
+}
+
+// Inline Block Spacing
+
+.inline-block-spacing()
+{
+	font-size:0;
+}
+
+// Font Size based on 10px on body
+
+.font-size(@rem)
+{
+	font-size:@rem * 1px;
+	font-size:@rem / 10rem;
+}
+
+.line-height(@rem)
+{
+	line-height:@rem * 1px;
+	line-height:@rem / 10rem;
+}
+
+// Colours with RGBA Fallback
+
+//Kudos to http://dan.cx/blog/2012/05/rgba-in-ie
+.background-color(@colour, @alpha: 1)
+{
+    background-color: @colour;
+	background-color: hsla(hue(@colour), saturation(@colour), lightness(@colour), @alpha);
+}
+
+.color(@colour, @alpha: 1)
+{
+	color: @colour;
+    color: hsla(hue(@colour), saturation(@colour), lightness(@colour), @alpha);    
+}
+
+.see-thru (@color: #000, @alpha: 0.9) {
+	background-color: @color;
+	background-color: hsla(hue(@color), saturation(@color), lightness(@color), @alpha);
+}
+
+// Minimum Height Fallback
+
+.min-height(@pixels) {
+	min-height: @pixels;
+	height: auto !important;
+	height: @pixels;
+}
+
+// Rounded
+
+.rounded() {
+    border-radius:1000px;
+    overflow:hidden;
+}

@@ -1,0 +1,177 @@
+#skipLink {
+    position: absolute;
+    left: -5000px;
+    overflow: hidden;
+    .font-size(14);
+}
+
+    #skipLink:focus {
+        display: block;
+        margin: 10px;
+        position: static;
+    }
+
+
+
+.page {
+    width: 100%;
+    position: relative;
+    .transition(margin, 0.5s, ease);
+}
+
+.page-content {
+    padding: 0;
+}
+
+.site-width {
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+
+.sector {
+    width: auto;
+    clear: both;
+    background-color: #FFF;
+
+    .sector-inner {
+        padding: 1.5em 0;
+        border-top: 1px solid #DFE3F1;
+    }
+
+    &.first-sector {
+
+        .sector-inner {
+            border-top: none;
+        }
+    }
+
+    &.last-sector {
+
+        .sector-inner {
+            padding: 0;
+        }
+        .span12 {
+            padding-top: 0;
+            padding-bottom: 0;
+            margin: 0;
+        }
+    }
+
+    &.first-sector.last-sector {
+        .span12 {
+            margin-bottom: 2em;
+            padding: 15px;
+        }
+    }
+
+    // Types
+
+    &.primary-sector {
+        background-color: #FAFBFB;
+        background-color: #fbfbfb;
+
+        &.pattern-sector {
+            
+            background-color: #fdfefc;
+        }
+    }
+
+    &.secondary-sector {
+        background-color: #ecf0f3;
+        background-color: #f3f3ed;
+        background-color: #f8f8f3;
+    }
+
+    &.tertiary-sector {
+        background-color: #DEEAF1;
+        background-color: #ecf0f3;
+        .sector-inner {
+            border-top-color: #C7CEE7;
+        }
+    }
+
+    &.pattern-sector {
+
+        .sector-inner {
+            background-image: url(/source/images/sector-pattern-bkg.png);
+        }
+    }
+
+    // Feature color(s)
+    &.feature-sector {
+        background-color: #267DA5;
+    }
+
+    // Brand color(s)
+    &.sunshine {
+        background-color: @color-sunshine;
+    }
+
+    &.carrot {
+        background-color: @color-carrot;
+    }
+
+    &.leather {
+        background-color: @color-leather;
+    }
+
+    &.earth {
+        background-color: @color-earth;
+    }
+
+    &.lipstick {
+        background-color: @color-lipstick;
+    }
+
+    &.grape {
+        background-color: @color-grape;
+    }
+
+    &.midnight {
+        background-color: @color-midnight;
+    }
+
+    &.sky {
+        background-color: @color-sky;
+    }
+
+    &.ocean {
+        background-color: @color-ocean;
+    }
+
+    &.grass {
+        background-color: @color-grass;
+    }
+}
+
+.content-container {
+    background: #fff;
+    border: 1px solid #cfd5e7;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.screen-0-690()
+{
+    .sector
+    {
+        .sector-inner,
+        &.last-sector .sector-inner
+         {
+            padding:0.7em 0;
+        }
+    }
+}
+
+.screen-768-up() {
+
+
+    .sector {
+
+        .sector-inner {
+            padding: 2em 0 1px;
+        }
+    }
+    
+}

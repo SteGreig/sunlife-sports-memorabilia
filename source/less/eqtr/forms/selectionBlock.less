@@ -1,0 +1,146 @@
+﻿
+
+.selection-block {
+    font-size: 0;
+    margin: 0 -2%;
+
+    .selection-block-item {
+        font-size: initial;
+        width: 96%;
+        margin: 0 2% 20px;
+        display: inline-block;
+        text-align: center;
+        position: relative;
+        vertical-align: top;
+
+        .gift-img {
+            margin-bottom: 10px;
+        }
+    }
+
+    .selection-block-mask {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .gift-summary {
+        visibility: hidden;
+        position: absolute;
+        top: 20px;
+        left: 0;
+        width: 80%;
+        padding:0 10%;
+        line-height:1.3;
+    }
+
+    .selection-block-item-inner {
+        padding: 20px;
+        position: relative;
+        background-color: #E9EDF0;
+        border-radius: 5px;
+        border: 1px solid #CCC;
+        cursor: pointer;
+        overflow: hidden;
+    }
+	.selection-block-item {
+		.no-touch-support & .selection-block-item-inner:hover,
+        &.active-touch {
+
+            .selection-block-mask {
+                display: block;
+                background: url('/source/images/ui-form-hover-bg.png');
+            }
+
+            .gift-summary {
+                visibility: visible;
+                color:#FFF;
+            }
+
+            input[type="radio"] + label {
+                color: #FFF;
+            }
+        }
+	}
+
+    input[type="radio"] {
+        display: inline-block;
+        width: 100%;
+    }
+
+    foo:checked::before,
+    input[type="radio"] {
+        position: absolute;
+        clip: rect(0,0,0,0);
+        clip: rect(0 0 0 0);
+    }
+
+        input[type="radio"] + label {
+            font-family: @font-default;
+            .font-size(15);
+            font-weight: bold;
+            position: relative;
+            z-index: 10;
+            width: 100%;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+    .active {
+
+        .selection-block-mask {
+            display: block;
+            background: url('/source/images/ui-form-selected-bg.png');
+        }
+
+        .no-touch-support & .selection-block-item-inner:hover {
+            .selection-block-mask {
+                background: url('/source/images/ui-form-selected-bg.png');
+            }
+
+            .gift-summary {
+                visibility: hidden;
+            }
+        }
+
+        input[type="radio"] + label {
+            color: #FFF;
+        }
+    }
+
+    #foo:checked,
+    [type="radio"] + label::before {
+        float: none!important;
+        display: block;
+        margin: 0 auto 10px!important;
+    }
+
+
+    #foo:checked,
+    [type="radio"] + label::before {
+        content: url('/source/images/ui-form-radio-white.png')!important;
+    }
+
+    [type="radio"]:checked + label::before {
+        content: url('/source/images/ui-form-radio-checked.png')!important;
+    }
+}
+
+.screen-480-up {
+
+    .selection-block .selection-block-item {
+        width: 46%;
+    }
+}
+
+.screen-960-up {
+
+    .selection-block .selection-block-item {
+        width: 29.3%;
+    }
+}

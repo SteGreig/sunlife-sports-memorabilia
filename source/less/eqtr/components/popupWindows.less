@@ -1,0 +1,121 @@
+﻿.js .popup-content {
+    display: none;
+}
+
+
+.popup-content-header {
+    font-family: @font-vag-light;
+    padding: 30px 0 10px;
+    .font-size(28);
+    .line-height(30);
+}
+
+.popup-window {
+    display: none;
+    background: white;
+    outline: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: auto;
+    z-index: 1001;
+    .component-border();
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
+    border: 1px solid #cfd5e7;
+
+    .close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        .sprite(0, 0, 33px, 33px);
+        text-indent: -9999em;
+    }
+    .popup-content-header {
+        border-bottom: 1px dashed #cfd5e7;
+        font-family: @font-vag-light;
+        margin-bottom: 0;
+        background-image: url(/source/images/sector-pattern-bkg.png);
+        padding: 30px 65px 30px 30px;
+        .font-size(28);
+        .line-height(30);
+    }
+
+    .popup-content-text {
+        padding: 30px;
+        margin:0;
+    }
+
+}
+
+
+.screen-0-690()
+{
+    html.popup-enabled
+    {
+        overflow: hidden;
+        position: relative;
+	
+        body
+        {
+            position: static;
+            overflow: hidden;
+        }
+    }
+
+    .popup-window
+    {
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        position: fixed;
+        top:0!important;
+    }
+}
+.screen-690-up()
+{
+    html.popup-enabled
+    {
+        overflow: hidden;
+    }
+
+    .modal
+    {
+        background: white;
+        background: rgba(255, 255, 255, 0.8);
+        outline: none;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        display: none;
+    }
+
+    .popup-window
+    {
+        width: 668px;
+        margin-left: -344px;
+        top: 0;
+        left: 50%;
+        height: auto;
+        position: fixed;
+    }
+
+    .scrollable-popup
+    {
+        height: 90%;
+        top: 5%;
+
+        .popup-content-text
+        {
+            overflow: auto;
+        }
+    }
+}
+.screen-890-up() {
+    .popup-window {
+      width: 770px;
+      margin-left: -385px;
+    }
+}

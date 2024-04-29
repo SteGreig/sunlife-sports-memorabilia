@@ -1,0 +1,329 @@
+/*
+--------------------------------------------------- 
+Richtext
+---------------------------------------------------
+*/
+
+
+/* Rich text --------------- */
+.richtext {
+    margin-bottom: 2em;
+}
+
+
+    /* Headings */
+    .page-title,.richtext h1,.richtext h2,.richtext h3,.richtext h4,.richtext h5,.richtext h6 {
+        font-family: @font-vag-light;
+    }
+
+    .richtext h1, .page-title {
+        color: #555;
+        font-weight: normal;
+    }
+
+.page-title {
+    margin-bottom: 44px;
+}
+
+.richtext h2 {
+    color: #555;
+    font-weight: normal;
+}
+
+.richtext h3 {
+    color: #555;
+    font-weight: normal;
+}
+
+.richtext h4 {
+    color: #555;
+    font-weight: normal;
+}
+
+.richtext h5 {
+    font-weight: bold;
+}
+
+.richtext h6 {
+    font-weight: bold;
+}
+
+/* Paragraphs */
+.richtext p {
+    .font-size(15);
+    .line-height(22);
+    margin-bottom: 1.4em;
+}
+
+.richtext strong {
+    font-weight: bold;
+}
+
+.richtext a {
+    font-weight: bold;
+}
+
+/* Images */
+.richtext img {
+    margin-bottom: 1.4em;
+    max-width: 100%;
+}
+
+
+/* Lists */
+.richtext ul {
+    .font-size(14);
+    .line-height(16);
+    margin: 0 0 15px 0;
+    overflow: hidden;
+}
+
+    .richtext ul li {
+        margin: 0 0 8px 16px;
+        list-style: disc;
+        line-height: 1.5;
+    }
+
+.richtext ol {
+    .font-size(14);
+    .line-height(16);
+    margin: 0 0 15px 0;
+    overflow: hidden;
+}
+
+    .richtext ol li {
+        list-style-type: decimal;
+        margin: 0 0 2px 24px;
+        line-height: 1.5;
+    }
+
+/* Tables */
+.richtext table {
+    border-width: 2px!important;
+    border-spacing: 1px!important;
+    border-color: #e3e7f2;
+    background: #fff;
+    margin: 30px 0;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.richtext tr {
+}
+
+.richtext th {
+    font-weight: bold;
+    color: #666;
+    background: #e9ecf0;
+}
+
+.richtext th,
+.richtext td {
+    border: 1px solid #ced5e8;
+    padding: 12px;
+    .font-size(14);
+    .line-height(15);
+    text-align: left;
+}
+.richtext td {
+    background: #fff;
+}
+.richtext table caption {
+    caption-side: bottom;
+	text-align: left;
+    .font-size(14);
+    .line-height(18);
+    padding: 10px 0;
+}
+.richtext table .highlight
+{
+	font-weight: bold;
+}
+
+.richtext .highlight {
+    color: #007eac;
+}
+
+.richtext-surround {
+    border: 1px dashed #cfd5e7;
+    border-radius: 6px;
+    padding:2em 1.8em 0;
+}
+
+.gift-description {
+    border-top: 1px dashed #cfd5e7;
+    padding: 20px 0;
+}
+.gift-item {
+    padding: 20px 0;
+    .clearfix();
+    .image {
+        float:left;
+        width: 130px;
+        text-align: center;
+        margin-right: 30px;
+    }
+    .text {
+        overflow: hidden;
+    }
+
+}
+
+.screen-0-690() {
+    .richtext h1, .page-title {
+        .font-size(34);
+        .line-height(36);
+        margin-bottom: 16px;
+    }
+
+    .page-title {
+        margin-bottom: 1em;
+    }
+
+    .richtext h2 {
+        .font-size(28);
+        .line-height(30);
+        margin-bottom: 16px;
+    }
+
+    .richtext h3 {
+        .font-size(24);
+        .line-height(26);
+        margin-bottom: 16px;
+    }
+
+    .richtext h4 {
+        .font-size(20);
+        .line-height(22);
+        margin-bottom: 16px;
+    }
+
+    .richtext h5 {
+        .font-size(18);
+        .line-height(20);
+        margin-bottom: 10px;
+    }
+
+    .richtext h6 {
+        .font-size(16);
+        .line-height(17);
+        margin-bottom: 4px;
+    }
+
+    /* jquery.responsiveTables - table styles*/
+    .richtext .table {
+        width: 100%;
+        th {
+            display: none;
+        }
+
+        td {
+            float: left;
+			width: 100%;
+			position:relative;
+			padding-left:56%;
+            .box-sizing(border-box);
+        }
+        
+        .table th,.table td {
+            .font-size(12);
+            .line-height(12);
+        }
+
+        td::before {
+            content: attr(data-title) ": ";
+			display: block;
+			position:absolute;
+			top:12px;
+			left:12px;
+			max-width:40%;
+			font-weight:bold;
+			color:#666;
+        }
+
+        .cell_0 {
+            background: #e3e7f2;
+            padding-bottom:20px;
+        }
+    }
+}
+
+.screen-690-up() {
+    .richtext h1, .page-title {
+        .font-size(42);
+        .line-height(44);
+        margin-bottom: 30px;
+    }
+
+    .page-title {
+        margin-bottom: 44px;
+    }
+
+    .richtext h2 {
+        .font-size(36);
+        .line-height(38);
+        margin-bottom: 30px;
+    }
+
+    .richtext h3 {
+        .font-size(30);
+        .line-height(32);
+        margin-bottom: 16px;
+    }
+
+    .richtext h4 {
+        .font-size(26);
+        .line-height(28);
+        margin-bottom: 16px;
+    }
+
+    .richtext h5 {
+        .font-size(22);
+        .line-height(24);
+        margin-bottom: 10px;
+    }
+
+    .richtext h6 {
+        .font-size(16);
+        .line-height(18);
+        margin-bottom: 4px;
+    }
+
+    .gift-item { 
+
+        h2 {
+            .font-size(30);
+            .line-height(32);
+        }
+        h3 {
+            .font-size(28);
+            .line-height(30);
+        }
+        h4 {
+            .font-size(26);
+            .line-height(28);
+        }
+        h5 {
+            .font-size(24);
+            .line-height(26);
+        }
+    }
+
+    .richtext .align-left {
+        float: left;
+        margin: 0 15px 10px 0;
+    }
+
+    .richtext .align-right {
+        float: right;
+        margin: 0 0 10px 15px;
+    }
+
+    .richtext-left-indent {
+        padding-left:30px;
+    }
+
+    .richtext-expanded-gutter {
+        margin-left: 36px;
+        margin-right: 36px;
+    }
+}

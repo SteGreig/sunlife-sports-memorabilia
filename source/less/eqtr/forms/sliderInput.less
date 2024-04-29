@@ -1,0 +1,381 @@
+﻿/* jQuery UI slider input */
+
+.js .slider-input {
+    display:none;
+}
+/*.js .slider-input:focus {
+    position: static;
+}*/
+
+.js .slider-control-group {
+    background: #e9edf0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.slider-control-group .field-control {
+    margin: 0;
+}
+
+.slider-gauge
+{
+    position: absolute;
+	top: 33px;
+    left: 0;
+    width: 100%;
+    ul
+    {
+        margin: 0 8px 0 14px;
+        .clearfix();
+        li
+        {
+            float:left;
+            width: 20%;
+            text-align: center;
+            padding-top:15px;
+            position: relative;
+            color: #b3b3b3;
+	        .font-size(16);
+            &:before {
+                content: '';
+                position: absolute;
+	            top: 0;
+                left: 50%;
+                margin-left: -1px;
+                width: 1px;
+                height: 10px;
+                background: #b7becf;
+            }
+        }
+        .min-val {
+            text-align: left;
+            color: #4d4d4d;
+            &:before {
+                left: 6px;
+                margin-left: 0;
+            }
+        }
+        .quarter-val {
+            text-align: left;
+            span {
+                display: block;
+	            margin-left: 18px;
+            }
+            &:before {
+                left: 26px;
+                margin-left: 0;
+            }
+        }
+        .threequarter-val {
+            text-align: right;
+            span {
+                display: block;
+	            margin-right: 26px;
+            }
+            &:before {
+                left: auto;
+                right: 35px;
+                margin-left: 0;
+            }
+        }
+        .max-val {
+            text-align: right;
+            color: #4d4d4d;
+            &:before {
+                left: auto;
+                right: 6px;
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+.slider-holder {
+    position: relative;
+
+    .slider-btns
+    {
+
+        .increase-btn, .decrease-btn
+        {
+            width: 30px;
+            height: 30px;
+            background: #fff;
+            border: 1px solid #ced5e8;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+            border-radius: 3px;
+            position: relative;
+            display: block;
+
+            span
+            {
+                display: block;
+                text-indent: -999em;
+                overflow: hidden;
+                width: 15px;
+                height: 16px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin: -8px 0 0 -8px;
+            }
+        }
+
+        .increase-btn
+        {
+            right: -50px;
+
+            span
+            {
+                background: url("/source/images/progress-sprite.png") 0 -82px no-repeat;
+            }
+        }
+
+        .decrease-btn
+        {
+            left: -50px;
+
+            span
+            {
+                background: url("/source/images/progress-sprite.png") -19px -81px no-repeat;
+            }
+        }
+    }
+
+    .qualifier {
+        margin-top: 1.5em;
+        .font-size(16);
+        .line-height(18);
+    }
+}
+.slider-element-container
+{
+    background: #fff;
+    padding: 10px 14px;
+    border-radius: 12px;
+    border: 1px solid #ced5e8;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    .ui-slider {
+        cursor: pointer;
+    }
+    .ui-slider .ui-slider-handle
+    {
+        cursor: pointer;
+        background-color: #fff;
+        border: 1px solid #ced5e8;
+
+        &.ui-state-focus
+        {
+            background-color: #fff;
+            background-image: none;
+            .handle {
+                border: 1px solid orange;
+            }
+        }
+
+        .handle
+        {
+            cursor: move;
+            position: absolute;
+            background-color: #fff;
+            border: 1px solid #ced5e8;
+            width: 55px;
+            height: 55px;
+            top: 50%;
+            left: 50%;
+            margin: -27px 0 0 -27px;
+            border-radius:1000px;
+            .indicator {
+                background: url("/source/images/progress-sprite.png") -36px -81px no-repeat;
+                width: 25px;
+                height: 12px;
+                display: block;
+                position: absolute;
+	            top: 50%;
+                left: 50%;
+                margin: -8px 0 0 -13px;
+            }
+            .value-holder
+            {
+                position: absolute;
+                top: 0;
+                left: 50%;
+                background-color: #f39200;
+                border-radius: 4px;
+                box-shadow: 0 2px 0 0 #b05b05;
+                width: 60px;
+                height: 38px;
+                margin-left:-30px;
+                margin-top:-52px;
+                color: #fff;
+                text-align: center;
+                font-family: @font-vag-light;
+                font-weight: normal;
+                .font-size(22);
+                p {
+                    margin: 9px 10px 0;
+                }
+
+                &:after,&:before {
+                    content: '';
+                    width: 0;
+                    height: 0;
+                    
+                    position: absolute;
+                    top: 100%;
+                    left: 50%;
+                    
+                }
+               &:before {
+                    border: 8px solid transparent;
+                    border-top-color: #b05b05;
+                    margin-left:-8px;
+                }
+                &:after {
+                    border: 6px solid transparent;
+                    border-top-color: #f39200;
+                    margin-left:-6px;
+                }
+            }
+        }
+    }
+
+    .ui-widget-header
+    {
+        background-image: none;
+        background-color: #f39200;
+    }
+}
+
+.lump-sum-payment {
+    background: #fff;
+    color: #4d4d4d;
+    padding: 1em 3em;
+    border-radius: 3px;
+    border: 1px solid #ced5e8;
+    margin: 60px auto 0;
+    font-family: @font-vag-light;
+    position: relative;
+    .font-size(22);
+    .line-height(24);
+    .inline-block();
+
+    span {
+        color: #f39200;
+    }
+}
+
+
+.screen-0-690() {
+    .js .slider-control-group {
+        padding: 80px 1em 3em;
+    }
+
+    .slider-element-container {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .slider-holder .slider-btns {
+        margin-top: -38px;
+        margin: -38px 0 0;
+        position: absolute;
+	    top: 0;
+        left: 0;
+        width: 100%;
+        .increase-btn {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+        .decrease-btn {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    }
+
+    .slider-gauge ul {
+        margin: 0 12px;
+    }
+
+    .lump-sum-payment {
+        padding: 1em;
+        margin-top: 44px;
+        .font-size(18);
+        .line-height(20);
+    }
+}
+.screen-690-up()
+{
+    .js .slider-control-group
+    {
+        padding: 100px 80px 40px;
+    }
+
+    .slider-holder
+    {
+        .slider-btns {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            .increase-btn, .decrease-btn
+            {
+                width: 30px;
+                height: 30px;
+                background: #fff;
+                border: 1px solid #ced5e8;
+                box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+                border-radius: 3px;
+                position: absolute;
+                top: 0;
+
+                span
+                {
+                    display: block;
+                    text-indent: -999em;
+                    overflow: hidden;
+                    width: 15px;
+                    height: 16px;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    margin: -8px 0 0 -8px;
+                }
+            }
+
+            .increase-btn
+            {
+                right: -50px;
+            }
+
+            .decrease-btn
+            {
+                left: -50px;
+            }
+        }
+        
+    }
+
+    .lump-sum-payment
+    {
+        padding: 1em 3em;
+    }
+}
+.screen-0-960() {
+
+    .slider-gauge ul {
+
+        li {
+            width: 33.3%;
+        }
+
+        .quarter-val,
+        .threequarter-val {
+            display: none;
+        }
+    }
+}

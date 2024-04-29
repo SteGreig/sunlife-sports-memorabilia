@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Responsive Design Testing</title>
+	<style>
+	    body{padding:20px;font-family:sans-serif;overflow-y:scroll;white-space: nowrap;background-color:#EEE;}
+	    h2{margin:0 0 20px 0;color:#666;}
+	    span.small{font-size:60%;vertical-align:middle;}
+	    .frame{display:inline-block;margin:0 10px;vertical-align: top;white-space: normal;}
+	    .frame img{display:none;vertical-align:middle;}
+	    iframe{ border: none;box-shadow:0 0 5px #AAA}
+	</style>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script>
+	    // idea borrowed from http://mattkersley.com/responsive/
+
+	    //var defaultURL = location.hostname + (location.port ? ":" + location.port : ""), //<---- Or change to your website url
+	    var startUrl = location.search.replace("?", "") || "/", //<---- Or change to your website url
+
+            devices = [
+                {
+                    label: "iPhone 4",
+                    width: 320,
+                    height: 480,
+                    rotate: true
+                },
+                {
+                    label: "Small tablet",
+                    width: 480,
+                    height: 640,
+                    rotate:true
+                },
+                {
+                    label: "iPad",
+                    width: 768,
+                    height: 1024,
+                    rotate: true
+                }
+            ],
+            scrollGutter,
+            iframeString = '<div class="frame"> \
+				<h2>{0}<span> x {1}</span> <span class="small">{2}</span> <img src="data:image/gif;base64,R0lGODlhIAAgAPMAAP///4yLNOTk0cfGnN3dxNHQrqSjXrKxeOzs3/Ly6eDgyZmYS42MNwAAAAAAAAAAACH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAIAAgAAAE5xDISWlhperN52JLhSSdRgwVo1ICQZRUsiwHpTJT4iowNS8vyW2icCF6k8HMMBkCEDskxTBDAZwuAkkqIfxIQyhBQBFvAQSDITM5VDW6XNE4KagNh6Bgwe60smQUB3d4Rz1ZBApnFASDd0hihh12BkE9kjAJVlycXIg7CQIFA6SlnJ87paqbSKiKoqusnbMdmDC2tXQlkUhziYtyWTxIfy6BE8WJt5YJvpJivxNaGmLHT0VnOgSYf0dZXS7APdpB309RnHOG5gDqXGLDaC457D1zZ/V/nmOM82XiHRLYKhKP1oZmADdEAAAh+QQJCgAAACwAAAAAIAAgAAAE6hDISWlZpOrNp1lGNRSdRpDUolIGw5RUYhhHukqFu8DsrEyqnWThGvAmhVlteBvojpTDDBUEIFwMFBRAmBkSgOrBFZogCASwBDEY/CZSg7GSE0gSCjQBMVG023xWBhklAnoEdhQEfyNqMIcKjhRsjEdnezB+A4k8gTwJhFuiW4dokXiloUepBAp5qaKpp6+Ho7aWW54wl7obvEe0kRuoplCGepwSx2jJvqHEmGt6whJpGpfJCHmOoNHKaHx61WiSR92E4lbFoq+B6QDtuetcaBPnW6+O7wDHpIiK9SaVK5GgV543tzjgGcghAgAh+QQJCgAAACwAAAAAIAAgAAAE7hDISSkxpOrN5zFHNWRdhSiVoVLHspRUMoyUakyEe8PTPCATW9A14E0UvuAKMNAZKYUZCiBMuBakSQKG8G2FzUWox2AUtAQFcBKlVQoLgQReZhQlCIJesQXI5B0CBnUMOxMCenoCfTCEWBsJColTMANldx15BGs8B5wlCZ9Po6OJkwmRpnqkqnuSrayqfKmqpLajoiW5HJq7FL1Gr2mMMcKUMIiJgIemy7xZtJsTmsM4xHiKv5KMCXqfyUCJEonXPN2rAOIAmsfB3uPoAK++G+w48edZPK+M6hLJpQg484enXIdQFSS1u6UhksENEQAAIfkECQoAAAAsAAAAACAAIAAABOcQyEmpGKLqzWcZRVUQnZYg1aBSh2GUVEIQ2aQOE+G+cD4ntpWkZQj1JIiZIogDFFyHI0UxQwFugMSOFIPJftfVAEoZLBbcLEFhlQiqGp1Vd140AUklUN3eCA51C1EWMzMCezCBBmkxVIVHBWd3HHl9JQOIJSdSnJ0TDKChCwUJjoWMPaGqDKannasMo6WnM562R5YluZRwur0wpgqZE7NKUm+FNRPIhjBJxKZteWuIBMN4zRMIVIhffcgojwCF117i4nlLnY5ztRLsnOk+aV+oJY7V7m76PdkS4trKcdg0Zc0tTcKkRAAAIfkECQoAAAAsAAAAACAAIAAABO4QyEkpKqjqzScpRaVkXZWQEximw1BSCUEIlDohrft6cpKCk5xid5MNJTaAIkekKGQkWyKHkvhKsR7ARmitkAYDYRIbUQRQjWBwJRzChi9CRlBcY1UN4g0/VNB0AlcvcAYHRyZPdEQFYV8ccwR5HWxEJ02YmRMLnJ1xCYp0Y5idpQuhopmmC2KgojKasUQDk5BNAwwMOh2RtRq5uQuPZKGIJQIGwAwGf6I0JXMpC8C7kXWDBINFMxS4DKMAWVWAGYsAdNqW5uaRxkSKJOZKaU3tPOBZ4DuK2LATgJhkPJMgTwKCdFjyPHEnKxFCDhEAACH5BAkKAAAALAAAAAAgACAAAATzEMhJaVKp6s2nIkolIJ2WkBShpkVRWqqQrhLSEu9MZJKK9y1ZrqYK9WiClmvoUaF8gIQSNeF1Er4MNFn4SRSDARWroAIETg1iVwuHjYB1kYc1mwruwXKC9gmsJXliGxc+XiUCby9ydh1sOSdMkpMTBpaXBzsfhoc5l58Gm5yToAaZhaOUqjkDgCWNHAULCwOLaTmzswadEqggQwgHuQsHIoZCHQMMQgQGubVEcxOPFAcMDAYUA85eWARmfSRQCdcMe0zeP1AAygwLlJtPNAAL19DARdPzBOWSm1brJBi45soRAWQAAkrQIykShQ9wVhHCwCQCACH5BAkKAAAALAAAAAAgACAAAATrEMhJaVKp6s2nIkqFZF2VIBWhUsJaTokqUCoBq+E71SRQeyqUToLA7VxF0JDyIQh/MVVPMt1ECZlfcjZJ9mIKoaTl1MRIl5o4CUKXOwmyrCInCKqcWtvadL2SYhyASyNDJ0uIiRMDjI0Fd30/iI2UA5GSS5UDj2l6NoqgOgN4gksEBgYFf0FDqKgHnyZ9OX8HrgYHdHpcHQULXAS2qKpENRg7eAMLC7kTBaixUYFkKAzWAAnLC7FLVxLWDBLKCwaKTULgEwbLA4hJtOkSBNqITT3xEgfLpBtzE/jiuL04RGEBgwWhShRgQExHBAAh+QQJCgAAACwAAAAAIAAgAAAE7xDISWlSqerNpyJKhWRdlSAVoVLCWk6JKlAqAavhO9UkUHsqlE6CwO1cRdCQ8iEIfzFVTzLdRAmZX3I2SfZiCqGk5dTESJeaOAlClzsJsqwiJwiqnFrb2nS9kmIcgEsjQydLiIlHehhpejaIjzh9eomSjZR+ipslWIRLAgMDOR2DOqKogTB9pCUJBagDBXR6XB0EBkIIsaRsGGMMAxoDBgYHTKJiUYEGDAzHC9EACcUGkIgFzgwZ0QsSBcXHiQvOwgDdEwfFs0sDzt4S6BK4xYjkDOzn0unFeBzOBijIm1Dgmg5YFQwsCMjp1oJ8LyIAACH5BAkKAAAALAAAAAAgACAAAATwEMhJaVKp6s2nIkqFZF2VIBWhUsJaTokqUCoBq+E71SRQeyqUToLA7VxF0JDyIQh/MVVPMt1ECZlfcjZJ9mIKoaTl1MRIl5o4CUKXOwmyrCInCKqcWtvadL2SYhyASyNDJ0uIiUd6GGl6NoiPOH16iZKNlH6KmyWFOggHhEEvAwwMA0N9GBsEC6amhnVcEwavDAazGwIDaH1ipaYLBUTCGgQDA8NdHz0FpqgTBwsLqAbWAAnIA4FWKdMLGdYGEgraigbT0OITBcg5QwPT4xLrROZL6AuQAPUS7bxLpoWidY0JtxLHKhwwMJBTHgPKdEQAACH5BAkKAAAALAAAAAAgACAAAATrEMhJaVKp6s2nIkqFZF2VIBWhUsJaTokqUCoBq+E71SRQeyqUToLA7VxF0JDyIQh/MVVPMt1ECZlfcjZJ9mIKoaTl1MRIl5o4CUKXOwmyrCInCKqcWtvadL2SYhyASyNDJ0uIiUd6GAULDJCRiXo1CpGXDJOUjY+Yip9DhToJA4RBLwMLCwVDfRgbBAaqqoZ1XBMHswsHtxtFaH1iqaoGNgAIxRpbFAgfPQSqpbgGBqUD1wBXeCYp1AYZ19JJOYgH1KwA4UBvQwXUBxPqVD9L3sbp2BNk2xvvFPJd+MFCN6HAAIKgNggY0KtEBAAh+QQJCgAAACwAAAAAIAAgAAAE6BDISWlSqerNpyJKhWRdlSAVoVLCWk6JKlAqAavhO9UkUHsqlE6CwO1cRdCQ8iEIfzFVTzLdRAmZX3I2SfYIDMaAFdTESJeaEDAIMxYFqrOUaNW4E4ObYcCXaiBVEgULe0NJaxxtYksjh2NLkZISgDgJhHthkpU4mW6blRiYmZOlh4JWkDqILwUGBnE6TYEbCgevr0N1gH4At7gHiRpFaLNrrq8HNgAJA70AWxQIH1+vsYMDAzZQPC9VCNkDWUhGkuE5PxJNwiUK4UfLzOlD4WvzAHaoG9nxPi5d+jYUqfAhhykOFwJWiAAAIfkECQoAAAAsAAAAACAAIAAABPAQyElpUqnqzaciSoVkXVUMFaFSwlpOCcMYlErAavhOMnNLNo8KsZsMZItJEIDIFSkLGQoQTNhIsFehRww2CQLKF0tYGKYSg+ygsZIuNqJksKgbfgIGepNo2cIUB3V1B3IvNiBYNQaDSTtfhhx0CwVPI0UJe0+bm4g5VgcGoqOcnjmjqDSdnhgEoamcsZuXO1aWQy8KAwOAuTYYGwi7w5h+Kr0SJ8MFihpNbx+4Erq7BYBuzsdiH1jCAzoSfl0rVirNbRXlBBlLX+BP0XJLAPGzTkAuAOqb0WT5AH7OcdCm5B8TgRwSRKIHQtaLCwg1RAAAOwAAAAAAAAAAAA==" /></h2> \
+				<iframe sandbox="allow-same-origin allow-forms allow-scripts" seamless width="{3}" height="{4}"></iframe> \
+			</div>';
+
+	    //show loading graphic
+	    function showLoader(el) {
+	        $(el).closest(".frame").find("img").fadeIn('slow');
+	    }
+
+	    //hdie loading graphic
+	    function hideLoader(el) {
+	        $(el).closest(".frame").find("img").fadeOut('slow');
+	    }
+
+	    //function to check load state of each frame
+	    function allLoaded() {
+	        var results = [];
+
+	        $('iframe').each(function () {
+	            if (!$(this).data('loaded')) {
+	                results.push(false)
+	            }
+	        });
+
+	        return results.length == 0;
+	    }
+
+	    function loadPage($frame, url) {
+	        //    if (url.substr(0, 7) !== 'http://' && url.substr(0, 8) !== 'https://' && url.substr(0, 7) !== 'file://') {
+	        //        url = 'http://' + url;
+	        //    }
+	        $('iframe')
+                .not($frame)
+                .each(function () { showLoader($(this)); })
+                .data('loaded', false).attr('src', url);
+	    }
+
+	    function generateFrame(item) {
+	        var labelRatio = item.width > item.height ? "landscape" : "portrait";
+	        return iframeString.format(item.width, item.height, "({0}{1})".format(item.label ? item.label + " " : "", labelRatio), item.width + scrollGutter, item.height );
+	    }
+
+	    //when document loads
+	    $(function () {
+
+	        // work out the scrollbar width (should be the same for the height)
+	        $('<div style="width:100px;overflow:scroll;"><div style="width:200px;"></div>').appendTo("body").each(function () {
+	            scrollGutter = $(this).width() - this.clientWidth;
+	        }).remove();
+
+	        var frameContainer = $("body");
+
+	        // create the iframes from the screens object
+	        $.each(devices, function (index, item) {
+
+	            frameContainer.append(generateFrame(item));
+
+	            if (item.rotate) {
+
+	                var temp = item.width;
+	                item.width = item.height;
+	                item.height = temp;
+
+	                frameContainer.append(generateFrame(item));
+	            }
+	        });
+
+	        // load the starturl
+	        loadPage('', startUrl);
+
+	        //when frame loads
+	        $('iframe').load(function () {
+	            var $this = $(this),
+                    url = '',
+                    error = false;
+
+	            try {
+	                url = $this.contents().get(0).location.href;
+	            } catch (e) {
+	                error = true;
+	            }
+
+	            //load other pages with the same URL
+	            if (allLoaded()) {
+	                if (error) {
+	                    alert('Browsers prevent navigation from inside iframes across domains.\nPlease use the textbox at the top for external sites.');
+	                    loadPage('', startUrl);
+	                } else {
+	                    loadPage($this, url);
+	                }
+	            }
+	                //when frame loads, hide loader graphic
+	            else {
+	                hideLoader($(this));
+	                $(this).data('loaded', true);
+	            }
+	        });
+
+	    });
+
+	    /* .NET like string format/replace function. Simple method for replacing {} placeholders in a string */
+	    String.prototype.format = function () {
+	        var str = this.toString();
+	        for (var x = 0; x < arguments.length; x++) {
+	            str = str.replace(new RegExp("\\{" + x + "\\}", "g"), arguments[x]);
+	        }
+	        return str;
+	    };
+	</script>
+</head>
+<body></body>
+</html>

@@ -1,0 +1,359 @@
+.select-policy-options {
+    .field-row,.field-control {
+        margin: 0;
+    }
+
+    .generic-form-navigation {
+        border-radius: 0 0 4px 4px;
+        border-bottom: none;
+        margin: 0;
+        .js & {
+            display: none;
+        }
+    }
+
+    .js & .additional-content-panel {
+        display: none;
+        &.show {
+            display: block;
+        }
+    }
+}
+
+.product-select-list
+{
+    background: #e9edf0;
+    border: 1px solid #ced5e8;
+    border-radius: 4px;
+    margin: 60px 0 10px;
+
+    &.field-row {
+        margin: 60px 0 10px;
+    }
+    .form & .field-control-group {
+        display: block;
+    }
+    li
+    {
+        &:nth-child(2)
+        {
+            border-top: 1px dashed #ced5e8;
+            border-bottom: 1px dashed #ced5e8;
+            margin: 0;
+        }
+    }
+
+    .products-list-item
+    {
+        text-align: center;
+    }
+
+    img
+    {
+        display: block;
+        margin: 10px auto 0;
+    }
+
+    .custom-input-group input[type="radio"] + label,
+    .custom-input-group input[type="checkbox"] + label
+    {
+        padding: 0;
+        margin: 10px 0;
+        font-family: @font-vag-light;
+        .font-size(16);
+    }
+
+    #foo:checked,
+    .custom-input-group [type="radio"] + label::before,
+    .custom-input-group [type="checkbox"] + label::before
+    {
+        display: none;
+    }
+
+    #foo:checked,
+    [type="radio"] + label::after
+    {
+        float: none!important;
+        display: block;
+        margin: 10px auto 0!important;
+    }
+
+    .custom-input-group input[type="radio"] + label.checked-true-focus::after,
+    .custom-input-group input[type="radio"] + label.checked-false-focus::after,
+    .custom-input-group input[type="checkbox"] + label.checked-true-focus::after,
+    .custom-input-group input[type="checkbox"] + label.checked-false-focus::after
+    {
+        /*box-shadow: 0 0 0 1px orange;*/
+    }
+
+    #foo:checked,
+    [type="radio"] + label::after
+    {
+        content: url('/source/images/ui-form-radio-white.png')!important;
+    }
+
+    [type="radio"]:checked + label::after
+    {
+        content: url('/source/images/ui-form-radio-checked.png')!important;
+    }
+}
+
+.policy-payment-options-container
+{
+    border: 1px solid #ced5e8;
+    border-radius: 4px;
+
+    .tooltip-error
+    {
+        display: none;
+    }
+
+    .form & .required-field-entry
+    {
+        display: block;
+    }
+
+    .field-row-error .required-field-entry:before
+    {
+        background-position: 0 0;
+    }
+
+    .js &
+    {
+        display: none;
+    }
+
+    .js &.show-summaries
+    {
+        display: block;
+    }
+
+    .policy-payment-options-header
+    {
+        padding: 30px;
+        border-bottom: 1px dashed #dae0e3;
+        font-family: @font-vag-light;
+        .font-size(22);
+    }
+
+
+    .policy-payment-option
+    {
+        padding: 30px 0;
+
+        .js &
+        {
+            padding: 0;
+        }
+
+        &:first-child
+        {
+            border-bottom: 1px dashed #dae0e3;
+        }
+
+        .policy-payment-options-summary,
+        .policy-payment-options-description,
+        .radiobutton
+        {
+            padding: 0 30px;
+        }
+
+        .js & .policy-payment-options-summary,
+        .js & .policy-payment-options-description,
+        .js & .radiobutton
+        {
+            padding: 30px;
+        }
+
+        &.paymenttype-lumpsum
+        {
+            .policy-payment-option-title, .highlight
+            {
+                color: #b10053;
+            }
+        }
+
+        &.paymenttype-lifeinsurance
+        {
+            .policy-payment-option-title, .highlight
+            {
+                color: #007ba7;
+            }
+        }
+
+        .highlight
+        {
+            font-weight: bold;
+        }
+    }
+
+    .item-links
+    {
+        padding: 0 30px 30px;
+
+        .step-navigation
+        {
+            padding: 8px 0;
+            margin-right: -4px;
+            .font-size(15);
+        }
+    }
+
+    .policy-payment-option-title
+    {
+        font-family: @font-vag-light;
+        margin-bottom: 16px;
+        .font-size(22);
+    }
+
+    .policy-payment-option-sub-title
+    {
+        color: #4d4d4d;
+        margin-bottom: 0;
+        .font-size(15);
+        
+        &.fadeInText
+        {
+            .animated;
+            .fadeIn;
+        }
+    }
+
+    .js & .policy-payment-option-sub-title
+    {
+        margin-bottom: 0;
+    }
+
+    .js & .policy-payment-options-description,
+    .js & .radiobutton
+    {
+        display: none;
+    }
+
+
+    &.panelview-changed
+    {
+        .policy-payment-options-container
+        {
+            display: block;
+        }
+
+        .policy-payment-option
+        {
+            display: none;
+        }
+
+        .show-panel-description
+        {
+            display: block;
+            /*opacity: 0;*/
+            border: none;
+
+            .item-links
+            {
+                display: none;
+            }
+
+            .js & .policy-payment-options-description
+            {
+                display: block;
+                margin: 0;
+            }
+
+            .policy-payment-options-summary
+            {
+                padding-bottom: 0;
+            }
+        }
+
+        .js & .generic-form-navigation
+        {
+            display: block;
+        }
+    }
+}
+
+.screen-690-up()
+{
+    .product-select-list
+    {
+
+        .products-list-item
+        {
+
+            &.selected-item
+            {
+                position: relative;
+
+                &:before, &:after
+                {
+                    content: '';
+                    bottom: -12px;
+                    position: absolute;
+                    width: 0;
+                    height: 0;
+                    z-index: 1;
+                }
+
+                &:before
+                {
+                    border: 22px solid transparent;
+                    border-bottom-color: #ced5e8;
+                    left: 50%;
+                    margin-left: -22px;
+                }
+
+                &:after
+                {
+                    border: 20px solid transparent;
+                    border-bottom-color: #fff;
+                    left: 50%;
+                    margin-left: -20px;
+                }
+            }
+        }
+
+        ul {
+            .clearfix();
+        }
+        li {
+            float: left;
+            width: 33.333333%;
+            &:nth-child(2) {
+                border: none;
+                border-left: 1px dashed #ced5e8;
+	            border-right: 1px dashed #ced5e8;
+                margin: 0 -1px;
+            }
+        }
+
+        img {
+            margin: -30px auto 0;
+        }
+
+        .custom-input-group input[type="radio"] + label,
+        .custom-input-group input[type="checkbox"] + label
+        {
+            .font-size(22);
+        }
+    }
+
+    .policy-payment-option {
+        .policy-payment-options-summary-container {
+            display: table;
+            width: 100%;
+        }
+        .item-links {
+            width: 20%;
+            padding-top: 30px;
+            border-left: 1px solid #dae0e3;
+            text-align: center;
+            background: #f2f2f2;
+        }
+        .policy-payment-options-summary,
+        .item-links {
+            display: table-cell;
+            vertical-align: middle;
+        }
+    }
+}

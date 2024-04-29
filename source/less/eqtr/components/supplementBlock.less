@@ -1,0 +1,216 @@
+﻿
+.supplement-header {
+    margin-bottom: 25px;
+
+    .js & {
+        display: none;
+    }
+    .ie7 & {
+        display: block; /* IE7 gets the no-js view of this component */
+    }
+
+    .supplement-title {
+        .font-size(30);
+        line-height: 1.2em;
+        color: #555;
+    }
+}
+
+.supplement-tabs
+{
+    position: relative;
+
+    ul
+    {
+        display: table;
+        width: 100%;
+    }
+
+    li
+    {
+        display: table-cell;
+        border-bottom: 5px solid transparent;
+        .font-size(18);
+        line-height: 1.2em;
+        color: #555;
+        text-align: center;
+        vertical-align: middle;
+        font-family: @font-vag-light;
+
+        a
+        {
+            text-decoration: none;
+            color: inherit;
+            z-index: 1;
+            padding:30px 10px;
+            display: block;
+            
+            &:hover {
+                background: rgba(209, 223, 235, 0.7);
+                cursor: pointer;
+            }
+
+            span
+            {
+                position: relative;
+
+                &:before
+                {
+                    content: "\e613";
+                    font-family: icomoon;
+                    position: absolute;
+                    top: 0;
+                    left: -45px;
+                }
+            }
+        }
+
+
+        &:nth-child(odd)
+        {
+            width: 50%;
+        }
+
+        &.active
+        {
+            border-color: #ac0053;
+            a
+            {
+                span
+                {
+                    position: relative;
+
+                    &:before
+                    {
+                        content: "\e615";
+                    }
+                }
+            }
+        }
+    }
+}
+.supplement-group {
+    position: relative;
+    overflow: hidden;
+}
+.supplement-block {
+
+    .js & {
+        position: absolute;
+	    left: -5000em;
+        top: 0;
+    }
+    .ie7 & {
+        position: static; /* IE7 gets the no-js view of this component */
+    }
+
+    &.shown {
+        position: static;
+        padding-bottom: 40px;
+    }
+
+    .supplement-content {
+        background-color: #FFF;
+        border: 1px solid #C7CEE7;
+        border-radius: 0 0 5px 5px;
+        .box-sizing(border-box);
+    }
+}
+
+.screen-0-690()
+{
+    .supplement-tabs
+    {
+        display: none;
+    }
+
+    .tab-link-container {
+        border-bottom: 5px solid transparent;
+        .font-size(18);
+        line-height: 1.2em;
+        color: #555;
+        text-align: left;
+        font-family: @font-vag-light;
+        a {
+            text-decoration:none;
+            color:inherit;
+	        z-index: 1;
+            padding: 20px 10px 20px 30px;
+            display: block;
+
+            span
+            {
+                position: relative;
+
+                &:before
+                {
+                    content: "\e613";
+                    font-family: icomoon;
+                    position: absolute;
+                    top: 0;
+                    left: -30px;
+                }
+            }
+        }
+
+        &:nth-child(odd) {
+            width: 50%;
+        }
+
+        &.active {
+            border-color: #ac0053;
+
+            a
+            {
+                span
+                {
+                    position: relative;
+
+                    &:before
+                    {
+                        content: "\e615";
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+
+.screen-569-up()
+{
+
+    .supplement-tabs
+    {
+
+        li
+        {
+            .font-size(24);
+        }
+    }
+}
+
+.screen-690-up()
+{
+    .tab-link-container {
+        display: none;
+    }
+}
+
+.screen-768-up()
+{
+}
+
+.screen-960-up()
+{
+
+    .supplement-tabs
+    {
+
+        li
+        {
+            .font-size(30);
+        }
+    }
+}

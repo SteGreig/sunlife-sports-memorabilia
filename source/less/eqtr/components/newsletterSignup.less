@@ -1,0 +1,196 @@
+﻿
+// Newsletter Component Promo style
+.newsletter-signup-promo {
+    background: #fff;
+    border: 1px solid #dae0e3;
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: 0 0 6px rgba(0,0,0,0.1);
+
+    .component-header {
+        .clearfix();
+
+        .title {
+            color: @color-sky;
+            font-family: @font-vag-light;
+            margin-bottom: 0;
+            overflow: hidden;
+            padding-top: 6px;
+            border-bottom: 1px solid #dae0e3;
+            padding-bottom: 20px;
+            .font-size(26);
+            .line-height(28);
+        }
+    }
+
+    .summary {
+        padding-top: 20px;
+
+        h4 {
+            color: #555;
+            margin-bottom: 20px;
+            font-family: @font-vag-light;
+            .font-size(18);
+        }
+
+        p {
+            margin-bottom: 20px;
+            .font-size(15);
+            .line-height(18);
+        }
+
+        .btn {
+            margin-left: 0;
+        }
+    }
+
+    .feature-list {
+        border-bottom: 1px solid #e7ebed;
+        margin-left: -20px;
+        margin-right: -20px;
+
+        li {
+            display: block;
+            padding: 20px 20px 20px 60px;
+            border-top: 1px solid #e7ebed;
+            list-style: none;
+            background: url(/source/images/feature-list-item.png) 20px 15px no-repeat;
+            .font-size(13);
+            .line-height(16);
+        }
+    }
+
+    .cta-panel {
+        margin: 0 -20px;
+        padding: 10px 5px;
+        text-align: center;
+        background: #f2f2f2;
+
+        .btn {
+            margin: 5px 10px;
+        }
+    }
+
+    .signup-form {
+        border-top: 1px solid #dae0e3;
+        border-bottom: 1px solid #dae0e3;
+        padding: 20px 0 0;
+
+        label {
+            .hide-element();
+        }
+
+        .form-title {
+            margin-bottom: 20px;
+            padding-top: 6px;
+            padding-left: 40px;
+            font-family: @font-vag-light;
+            color: #555;
+            position: relative;
+            .font-size(18);
+
+            &:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                background: #e6e6e6;
+                width: 30px;
+                height: 30px;
+                .rounded();
+            }
+
+            &:after {
+                content: '\e60e';
+                position: absolute;
+                top: 0;
+                left: 0;
+                speak: none;
+                font-family: icomoon;
+                margin: 0.25em;
+                .font-size(20);
+            }
+        }
+
+        .text-field {
+            width: 100%;
+            .box-sizing(border-box);
+            margin: 0 0 20px;
+        }
+
+        .error {
+            margin-bottom:10px;
+
+            
+            span {
+                font-family: @font-vag-light;
+                .font-size(16);
+                line-height: 1.3;
+            }
+        }
+
+
+        .btn-container {
+            margin-bottom: 20px;
+            .inline-block(top);
+
+        }
+    }
+}
+
+
+
+// Newsletter Component Snippet style.
+// Inherits base styles from /css/eqtr/components/snippetComponent.less
+.snippet-component.newsletter-signup {
+    a
+    {
+        color: @color-newsletter;
+    }
+
+    .icon-overlay
+    {
+        &:after
+        {
+            content: '\e60e';
+        }
+        .background
+        {
+            border-top-color: @color-newsletter;
+            border-left-color: @color-newsletter;
+        }
+    }
+    .richtext {
+        margin: 0;
+    }
+    .signup-form {
+        padding:0;
+        
+        label {
+            .hide-element();
+        }
+        .form-title {
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            font-family: @font-vag-light;
+            color:#555;
+            border-bottom: 1px solid #dae0e3;
+            .font-size(25);
+            .line-height(27);
+        }
+        .text-field {
+            margin:10px 0;
+            width:100%;
+            .font-size(16);
+            .box-sizing(border-box);
+        }
+        .btn-container {
+            margin-bottom: 20px;
+            display: block;
+	
+            .btn {
+                margin:0;
+            }
+        }
+    }
+}

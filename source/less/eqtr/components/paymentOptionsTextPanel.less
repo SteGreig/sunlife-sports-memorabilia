@@ -1,0 +1,111 @@
+﻿.payment-option
+{
+    border-top: 1px dashed #ced5e8;
+    padding: 40px 0 0;
+
+    .payment-option-title
+    {
+        font-family: @font-vag-light;
+    }
+    .list {
+        ul {
+    
+        }
+        li {
+            .font-size(14);
+            .line-height(17);
+            margin: 0 0 8px 0;
+            padding: 10px 10px 10px 44px;
+            background: url(/source/images/ticklist-icon-green.png) 0 2px no-repeat;
+        }
+    }
+
+    .cta {
+        border-top: 1px dashed #ced5e8;
+        margin: 30px 0;
+        padding: 20px 0;
+
+        p {
+            font-family: @font-vag-light;
+            color: #666;
+            .font-size(22);
+            .line-height(30);
+
+            a {
+                color: #666;
+                text-decoration: none;
+            }
+            span {
+                color: #007eac;
+            }
+        }
+    }
+}
+
+.theme-pink {
+    .highlight,
+    .payment-option-title {
+        color: #d40063;
+    }
+
+    .list {
+        li {
+            background-image: url(/source/images/ticklist-icon-pink.png);
+        }
+    }
+}
+.theme-purple {
+    .highlight,
+    .payment-option-title {
+        color: #671a56;
+    }
+
+    .list {
+        li {
+            background-image: url(/source/images/ticklist-icon-purple.png);
+        }
+    }
+}
+.theme-blue {
+    .highlight,
+    .payment-option-title {
+        color: #007eac;
+    }
+
+    .list {
+        li {
+            background-image: url(/source/images/ticklist-icon-blue.png);
+        }
+    }
+}
+
+.screen-0-960()
+{
+    .payment-option .payment-option-title
+    {
+        .font-size(26);
+        .line-height(28);
+        margin-bottom: 16px;
+    }
+}
+.screen-960-up()
+{
+
+    .payment-option {
+        .clearfix();
+        .payment-option-title
+        {
+            .font-size(32);
+            .line-height(34);
+            margin-bottom: 30px;
+        }
+        .payment-description {
+            float:left;
+            width: 48%;
+        }
+        .additional-information {
+            float:right;
+            width: 48%;
+        }
+    }
+}
